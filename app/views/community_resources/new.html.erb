@@ -1,0 +1,11 @@
+<% content_for :title, "New community resource" %>
+
+<h1>New community resource</h1>
+
+<%= render "form", community_resource: @community_resource %>
+
+<br>
+
+<div>
+  <%= link_to "Back to community resources", community_resources_path %>
+</div>
