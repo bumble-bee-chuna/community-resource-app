@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :phone, style: "display: block" %>
-    <%= form.telephone_field :phone, :placeholder => "503-123-4567", :pattern => '[0-9]{3}-[0-9]{3}-[0-9]{4}', :required => true, class: "form-control" %>
+    <%= form.telephone_field :phone, :placeholder => "503-123-4567", :pattern => "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true, class: "form-control" %>
   </div>
 
   <div>
@@ -33,7 +33,7 @@
 
   <div>
     <%= form.label :website, style: "display: block" %>
-    <%= form.url_field :website, class: "form-control" %>
+    <%= form.url_field :website, class: "form-control", :placeholder => "Please start with https:// or http://" %>
   </div>
 
   <div>
