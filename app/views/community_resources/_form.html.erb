@@ -41,6 +41,11 @@
     <%= form.text_area :information, :required => true, class: "form-control" %>
   </div>
 
+  <div class='form-group'>
+    <%= form.label :recovery_tag_list %>
+    <%= form.text_field :recovery_tag_list, value: @community_resource.send(:recovery_tag_list).to_s %>
+  </div>
+
   <div>
     <%= form.submit class: "btn btn-primary" %>
   </div>
