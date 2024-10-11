@@ -13,35 +13,35 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :required => true, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :hours_of_operation, style: "display: block" %>
-    <%= form.text_field :hours_of_operation %>
+    <%= form.text_field :hours_of_operation, :placeholder => "Example: M-F 9am-5pm, Sat-Sun 6am-2pm", :required => true, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+    <%= form.telephone_field :phone, :placeholder => "503-123-4567", :pattern => '[0-9]{3}-[0-9]{3}-[0-9]{4}', :required => true, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :website, style: "display: block" %>
-    <%= form.text_field :website %>
+    <%= form.url_field :website, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :information, style: "display: block" %>
-    <%= form.text_area :information %>
+    <%= form.text_area :information, :required => true, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
