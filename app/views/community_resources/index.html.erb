@@ -4,12 +4,27 @@
 
 <h1>Community resources</h1>
 
-<div id="community_resources">
+<div id="community_resources" class="card-deck mb-3 text-center">
   <% @community_resources.each do |community_resource| %>
-    <%= render community_resource %>
-    <p>
-      <%= link_to "Show this community resource", community_resource %>
-    </p>
+    
+
+  <div id="<%= dom_id community_resource %>" class="card mb-4 box-shadow">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">
+      <%= community_resource.name %>
+      </h4>
+    </div>
+
+    <div class="card-body">
+      <%= render community_resource %>
+
+      <p>
+        <%= link_to "Show this community resource", community_resource %>
+      </p>
+    </div>
+  </div>
+
+
   <% end %>
 </div>
 

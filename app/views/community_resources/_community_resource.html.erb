@@ -1,32 +1,26 @@
-<div id="<%= dom_id community_resource %>">
-  <p>
-    <strong>Name:</strong>
-    <%= community_resource.name %>
-  </p>
+<p>
+  <strong>Hours of operation:</strong>
+  <%= community_resource.hours_of_operation %>
+</p>
 
-  <p>
-    <strong>Hours of operation:</strong>
-    <%= community_resource.hours_of_operation %>
-  </p>
+<p>
+  <strong>Phone:</strong>
+  <%= community_resource.phone %>
+</p>
 
-  <p>
-    <strong>Phone:</strong>
-    <%= community_resource.phone %>
-  </p>
+<p>
+  <strong>Address:</strong>
+  <%= community_resource.address %>
+</p>
 
-  <p>
-    <strong>Address:</strong>
-    <%= community_resource.address %>
-  </p>
-
-  <p>
-    <strong>Website:</strong>
+<p>
+  <strong>Website:</strong>
+  <a href="<%= community_resource.website %>">
     <%= community_resource.website %>
-  </p>
+  </a>
+</p>
 
-  <p>
-    <strong>Information:</strong>
-    <%= community_resource.information %>
-  </p>
-
-</div>
+<p>
+  <strong>Information:</strong>
+  <%= community_resource.information %>
+</p>
