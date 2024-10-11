@@ -25,7 +25,10 @@
   <%= community_resource.information %>
 </p>
 
+
+<% if community_resource.recovery_tag_list.length != 0 %>
 <p>
   <strong>Recovery Tags:</strong>
   <%= community_resource.recovery_tag_list %>
 </p>
+<% end %>
