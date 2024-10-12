@@ -65,6 +65,6 @@ class CommunityResourcesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def community_resource_params
-      params.require(:community_resource).permit(:name, :hours_of_operation, :phone, :address, :website, :information, :recovery_tag_list)
+      params.require(:community_resource).permit(:name, :hours_of_operation, :phone, :address, :website, :information, :recovery_tag_list => [])
     end
 end

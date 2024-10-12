@@ -25,8 +25,6 @@ gem "sassc-rails"
 
 gem "acts-as-taggable-on"
 
-gem "select2-rails"
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

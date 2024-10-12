@@ -42,11 +42,15 @@
   </div>
 
   <div class='form-group'>
-    <%= form.label :recovery_tag_list %>
-    <%= form.text_field :recovery_tag_list, value: @community_resource.send(:recovery_tag_list).to_s %>
+    <%= form.label :recovery_tag_list %><br />
+    <% for tag in ActsAsTaggableOn::Tag.for_context(:recovery_tags) %>
+    <%= form.check_box :recovery_tag_list, { :multiple => true }, tag.name, nil %><%= tag.name %>
+    <% end %>
   </div>
 
   <div>
     <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+
+
