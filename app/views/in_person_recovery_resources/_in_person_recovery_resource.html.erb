@@ -11,14 +11,22 @@
 
   <div class="display-field">
     <div class="field-label"><strong>Phone:</strong></div>
-    <div class="field-value"><%= in_person_recovery_resource.phone %></div>
+    <% if in_person_recovery_resource.phone != "" %>
+      <div class="field-value"><%= in_person_recovery_resource.phone %></div>
+    <% else %>
+      <div class="field-value">Not listed.</div>
+    <% end %>
   </div>
 
   <div class="display-field">
     <div class="field-label"><strong>Website:</strong></div>
-    <div class="field-value">
-      <a href="<%= in_person_recovery_resource.website %>"><%= in_person_recovery_resource.website %></a>
-    </div>
+    <% if in_person_recovery_resource.website != "" %>
+      <div class="field-value">
+        <a href="<%= in_person_recovery_resource.website %>"><%= in_person_recovery_resource.website %></a>
+      </div>
+    <% else %>
+      <div class="field-value">Not listed.</div>
+    <% end %>
   </div>
 
   <div class="display-field">
