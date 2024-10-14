@@ -31,74 +31,51 @@
     <%= form.text_field :website, :required => true, class: "form-control" %>
   </div class="form-field">
 
-  <div class="form-field">
-    <%= form.label :monday_opening_hours, style: "display: block" %>
-    <%= form.text_field :monday_opening_hours, :required => true, class: "form-control" %>
-  </div>
 
   <div class="form-field">
-    <%= form.label :monday_closing_hours, style: "display: block" %>
-    <%= form.text_field :monday_closing_hours, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :tuesday_opening_hours, style: "display: block" %>
-    <%= form.text_field :tuesday_opening_hours, :required => true, class: "form-control" %>
-  </div class="form-field">
-
-  <div class="form-field">
-    <%= form.label :tuesday_closing_hours, style: "display: block" %>
-    <%= form.text_field :tuesday_closing_hours, :required => true, class: "form-control" %>
-  </div class="form-field">
-
-  <div class="form-field">
-    <%= form.label :wednesday_opening_hours, style: "display: block" %>
-    <%= form.text_field :wednesday_opening_hours, :required => true, class: "form-control" %>
-  </div class="form-field">
-
-  <div class="form-field">
-    <%= form.label :wednesday_closing_hours, style: "display: block" %>
-    <%= form.text_field :wednesday_closing_hours, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :thursday_opening_hours, style: "display: block" %>
-    <%= form.text_field :thursday_opening_hours, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :thursday_closing_hours, style: "display: block" %>
-    <%= form.text_field :thursday_closing_hours, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :friday_opening_hours, style: "display: block" %>
-    <%= form.text_field :friday_opening_hours, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :friday_closing_hours, style: "display: block" %>
-    <%= form.text_field :friday_closing_hours, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :saturday_opening_hours, style: "display: block" %>
-    <%= form.text_field :saturday_opening_hours, :required => true, class: "form-control" %>
-  </div class="form-field">
-
-  <div class="form-field">
-    <%= form.label :saturday_closing_hours, style: "display: block" %>
-    <%= form.text_field :saturday_closing_hours, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :sunday_opening_hours, style: "display: block" %>
-    <%= form.text_field :sunday_opening_hours, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :sunday_closing_hours, style: "display: block" %>
-    <%= form.text_field :sunday_closing_hours, :required => true, class: "form-control" %>
+    <label style="display: block">Hours of Operation</label>
+    <table>
+      <tr>
+        <th></th>
+        <th>Opens at:</th>
+        <th>Closes at:</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td><%= form.text_field :monday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.text_field :monday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td><%= form.text_field :tuesday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.text_field :tuesday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td><%= form.text_field :wednesday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.text_field :wednesday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td><%= form.text_field :thursday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.text_field :thursday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td><%= form.text_field :friday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.text_field :friday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td><%= form.text_field :saturday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.text_field :saturday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td><%= form.text_field :sunday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.text_field :sunday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+    </table>
   </div>
 
   <div class="form-field">
