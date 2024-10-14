@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_14_163953) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_14_172231) do
   create_table "community_resources", force: :cascade do |t|
     t.string "name"
     t.string "hours_of_operation"
@@ -96,6 +96,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_14_163953) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "bus_routes"
+  end
+
+  create_table "online_peer_and_recovery_resources", force: :cascade do |t|
+    t.string "name"
+    t.string "hosting_org"
+    t.string "hosting_org_website"
+    t.string "time_of_meetings"
+    t.text "how_to_access"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", force: :cascade do |t|

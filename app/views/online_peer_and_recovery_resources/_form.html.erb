@@ -1,0 +1,56 @@
+<%= form_with(model: online_peer_and_recovery_resource, :html => {:class => 'resource-form'}) do |form| %>
+  <% if online_peer_and_recovery_resource.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(online_peer_and_recovery_resource.errors.count, "error") %> prohibited this online_peer_and_recovery_resource from being saved:</h2>
+
+      <ul>
+        <% online_peer_and_recovery_resource.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :hosting_org, style: "display: block" %>
+    <%= form.text_field :hosting_org, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :hosting_org_website, style: "display: block" %>
+    <%= form.text_field :hosting_org_website, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :time_of_meetings, style: "display: block" %>
+    <%= form.text_field :time_of_meetings, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :how_to_access, style: "display: block" %>
+    <%= form.text_area :how_to_access, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :lived_experience_tag_list, "Lived Experiences" %>
+    <%=
+      form.text_field :lived_experience_tag_list,
+      value: @online_peer_and_recovery_resource.send(:lived_experience_tag_list).to_s,
+      placeholder: 'Autism, Hearing Voices, Etc'
+    %>
+  </div>
+
+  <div class="form-submit-container">
+    <%= form.submit :value => "Update Online Peer and Recovery Resource", :class => 'btn btn-primary'  %>
+  </div>
+<% end %>

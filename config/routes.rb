@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :online_peer_and_recovery_resources
   resources :in_person_interest_resources
   resources :in_person_wellbeing_resources
   resources :in_person_recovery_resources

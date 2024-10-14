@@ -1,0 +1,1 @@
+json.array! @online_peer_and_recovery_resources, partial: "online_peer_and_recovery_resources/online_peer_and_recovery_resource", as: :online_peer_and_recovery_resource
