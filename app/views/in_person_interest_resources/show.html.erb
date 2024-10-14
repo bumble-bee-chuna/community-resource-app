@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @in_person_interest_resource %>
+
+<div>
+  <%= link_to "Edit this in person interest resource", edit_in_person_interest_resource_path(@in_person_interest_resource) %> |
+  <%= link_to "Back to in person interest resources", in_person_interest_resources_path %>
+
+  <%= button_to "Destroy this in person interest resource", @in_person_interest_resource, method: :delete %>
+</div>

@@ -1,0 +1,45 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  bus_routes: MyString
+  phone: MyString
+  website: MyString
+  monday_opening_hours: 2024-10-14 08:49:13
+  monday_closing_hours: 2024-10-14 08:49:13
+  tuesday_opening_hours: 2024-10-14 08:49:13
+  tuesday_closing_hours: 2024-10-14 08:49:13
+  wednesday_opening_hours: 2024-10-14 08:49:13
+  wednesday_closing_hours: 2024-10-14 08:49:13
+  thursday_opening_hours: 2024-10-14 08:49:13
+  thursday_closing_hours: 2024-10-14 08:49:13
+  friday_opening_hours: 2024-10-14 08:49:13
+  friday_closing_hours: 2024-10-14 08:49:13
+  saturday_opening_hours: 2024-10-14 08:49:13
+  saturday_closing_hours: 2024-10-14 08:49:13
+  sunday_opening_hours: 2024-10-14 08:49:13
+  sunday_closing_hours: 2024-10-14 08:49:13
+  information: MyText
+
+two:
+  name: MyString
+  address: MyString
+  bus_routes: MyString
+  phone: MyString
+  website: MyString
+  monday_opening_hours: 2024-10-14 08:49:13
+  monday_closing_hours: 2024-10-14 08:49:13
+  tuesday_opening_hours: 2024-10-14 08:49:13
+  tuesday_closing_hours: 2024-10-14 08:49:13
+  wednesday_opening_hours: 2024-10-14 08:49:13
+  wednesday_closing_hours: 2024-10-14 08:49:13
+  thursday_opening_hours: 2024-10-14 08:49:13
+  thursday_closing_hours: 2024-10-14 08:49:13
+  friday_opening_hours: 2024-10-14 08:49:13
+  friday_closing_hours: 2024-10-14 08:49:13
+  saturday_opening_hours: 2024-10-14 08:49:13
+  saturday_closing_hours: 2024-10-14 08:49:13
+  sunday_opening_hours: 2024-10-14 08:49:13
+  sunday_closing_hours: 2024-10-14 08:49:13
+  information: MyText

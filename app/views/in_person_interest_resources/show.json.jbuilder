@@ -1,0 +1,1 @@
+json.partial! "in_person_interest_resources/in_person_interest_resource", in_person_interest_resource: @in_person_interest_resource

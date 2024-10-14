@@ -1,0 +1,2 @@
+module InPersonInterestResourcesHelper
+end

@@ -1,0 +1,160 @@
+<div id="<%= dom_id in_person_interest_resource %>" class="resource-display">
+
+  <div class="display-field">
+    <div class="field-label"><strong>Name:</strong></div>
+    <div class="field-value"><%= in_person_interest_resource.name %></div>
+  </div>
+
+  <div class="display-field">
+    <div class="field-label"><strong>Address:</strong></div>
+    <div class="field-value"><%= in_person_interest_resource.address %></div>
+  </div>
+
+  <div class="display-field">
+    <div class="field-label"><strong>Phone:</strong></div>
+    <% if in_person_interest_resource.phone != "" %>
+      <div class="field-value"><%= in_person_interest_resource.phone %></div>
+    <% else %>
+      <div class="field-value">Not listed.</div>
+    <% end %>
+  </div>
+
+  <div class="display-field">
+    <div class="field-label"><strong>Website:</strong></div>
+    <% if in_person_interest_resource.website != "" %>
+      <div class="field-value">
+        <a href="<%= in_person_interest_resource.website %>"><%= in_person_interest_resource.website %></a>
+      </div>
+    <% else %>
+      <div class="field-value">Not listed.</div>
+    <% end %>
+  </div>
+
+  <div class="display-field">
+    <div class="field-label"><strong>Bus routes:</strong></div>
+    <% if in_person_interest_resource.bus_routes != "" and in_person_interest_resource.bus_routes != nil %>
+      <div class="field-value">
+        <%= in_person_interest_resource.bus_routes %>
+      </div>
+    <% else %>
+      <div class="field-value">Not listed.</div>
+    <% end %>
+  </div>
+
+  <div class="display-field">
+    <div class="field-label"><strong>Hours of Operation:</strong></div>
+    <div class="field-value">
+      <table>
+        <tr>
+          <th></th>
+          <th>Opens at:</th>
+          <th>Closes at:</th>
+        </tr>
+        <tr>
+          <td><strong>Monday</strong></td>
+          <% if in_person_interest_resource.monday_opening_hours != nil and in_person_interest_resource.monday_closing_hours != nil %>
+            <td><%= in_person_interest_resource.monday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_interest_resource.monday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+
+
+        <tr>
+          <td><strong>Tuesday</strong></td>
+          <% if in_person_interest_resource.tuesday_opening_hours != nil and in_person_interest_resource.tuesday_closing_hours != nil %>
+            <td><%= in_person_interest_resource.tuesday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_interest_resource.tuesday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+
+
+        <tr>
+          <td><strong>Wednesday</strong></td>
+          <% if in_person_interest_resource.wednesday_opening_hours != nil and in_person_interest_resource.wednesday_closing_hours != nil %>
+            <td><%= in_person_interest_resource.wednesday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_interest_resource.wednesday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+
+
+        <tr>
+          <td><strong>Thursday</strong></td>
+          <% if in_person_interest_resource.thursday_opening_hours != nil and in_person_interest_resource.thursday_closing_hours != nil %>
+            <td><%= in_person_interest_resource.thursday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_interest_resource.thursday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+
+
+        <tr>
+          <td><strong>Friday</strong></td>
+          <% if in_person_interest_resource.friday_opening_hours != nil and in_person_interest_resource.friday_closing_hours != nil %>
+            <td><%= in_person_interest_resource.friday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_interest_resource.friday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+
+        
+        <tr>
+          <td><strong>Saturday</strong></td>
+          <% if in_person_interest_resource.saturday_opening_hours != nil and in_person_interest_resource.saturday_closing_hours != nil %>
+            <td><%= in_person_interest_resource.saturday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_interest_resource.saturday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+        
+
+        <tr>
+          <td><strong>Sunday</strong></td>
+          <% if in_person_interest_resource.sunday_opening_hours != nil and in_person_interest_resource.sunday_closing_hours != nil %>
+            <td><%= in_person_interest_resource.sunday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_interest_resource.sunday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+
+  <% if in_person_interest_resource.pricing_accomodations != "" and in_person_interest_resource.pricing_accomodations != nil %>
+  <div class="display-field">
+    <div class="field-label"><strong>Pricing Accomodations</strong></div>
+    <div class="field-value"><%= in_person_interest_resource.pricing_accomodations %></div>
+  </div>
+  <% end %>
+
+  <div class="display-field">
+    <div class="field-label"><strong>Information:</strong></div>
+    <div class="field-value"><%= in_person_interest_resource.information %></div>
+  </div>
+
+  <% if in_person_interest_resource.interests_tag_list.length != 0 %>
+  <div class="display-field">
+    <div class="field-label"><strong>Interests Tags:</strong></div>
+    <div class="field-value"><%= in_person_interest_resource.interests_tag_list %></div>
+  </div>
+  <% end %>
+
+
+</div>
