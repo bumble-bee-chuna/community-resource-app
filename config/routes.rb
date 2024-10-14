@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :online_peer_and_recovery_resources
   resources :in_person_interest_resources
   resources :in_person_wellbeing_resources
