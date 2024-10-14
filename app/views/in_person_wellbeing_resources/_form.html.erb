@@ -1,0 +1,107 @@
+<%= form_with(model: in_person_wellbeing_resource, :html => {:class => 'resource-form'}) do |form| %>
+  <% if in_person_wellbeing_resource.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(in_person_wellbeing_resource.errors.count, "error") %> prohibited this in_person_wellbeing_resource from being saved:</h2>
+
+      <ul>
+        <% in_person_wellbeing_resource.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address, :required => true, class: "form-control" %>
+  </div>
+
+   <div class="form-field">
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :website, style: "display: block" %>
+    <%= form.text_field :website, :required => true, class: "form-control" %>
+  </div class="form-field">
+
+
+  <div class="form-field">
+    <label style="display: block">Hours of Operation</label>
+    <table>
+      <tr>
+        <th></th>
+        <th>Opens at:</th>
+        <th>Closes at:</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td><%= form.time_field :monday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.time_field :monday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td><%= form.time_field :tuesday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.time_field :tuesday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td><%= form.time_field :wednesday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.time_field :wednesday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td><%= form.time_field :thursday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.time_field :thursday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td><%= form.time_field :friday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.time_field :friday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td><%= form.time_field :saturday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.time_field :saturday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td><%= form.time_field :sunday_opening_hours, :required => true, class: "form-control" %></td>
+        <td><%= form.time_field :sunday_closing_hours, :required => true, class: "form-control" %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :information, style: "display: block" %>
+    <%= form.text_area :information, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :services_tag_list, "Services Offered" %>
+    <%=
+      form.text_field :services_tag_list,
+      value: @in_person_wellbeing_resource.send(:services_tag_list).to_s,
+      placeholder: 'Job Help, Disability Services, etc'
+    %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :culturally_specific_tag_list, "Culturally Specific For:" %>
+    <%=
+      form.text_field :culturally_specific_tag_list,
+      value: @in_person_wellbeing_resource.send(:culturally_specific_tag_list).to_s,
+      placeholder: 'BIPOC, People Of Marginalized Genders, Women, etc'
+    %>
+  </div>
+
+  <div class="form-submit-container">
+    <%= form.submit :value => "Update In Person Wellbeing Resource", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

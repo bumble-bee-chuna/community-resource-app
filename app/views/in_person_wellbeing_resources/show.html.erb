@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @in_person_wellbeing_resource %>
+
+<div>
+  <%= link_to "Edit this in person wellbeing resource", edit_in_person_wellbeing_resource_path(@in_person_wellbeing_resource) %> |
+  <%= link_to "Back to in person wellbeing resources", in_person_wellbeing_resources_path %>
+
+  <%= button_to "Destroy this in person wellbeing resource", @in_person_wellbeing_resource, method: :delete %>
+</div>

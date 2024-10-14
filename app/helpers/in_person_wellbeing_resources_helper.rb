@@ -1,0 +1,2 @@
+module InPersonWellbeingResourcesHelper
+end

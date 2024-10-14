@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "In person wellbeing resources" %>
+
+<h1>In person wellbeing resources</h1>
+
+<div id="in_person_wellbeing_resources">
+  <% @in_person_wellbeing_resources.each do |in_person_wellbeing_resource| %>
+    <%= render in_person_wellbeing_resource %>
+    <p>
+      <%= link_to "Show this in person wellbeing resource", in_person_wellbeing_resource %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New in person wellbeing resource", new_in_person_wellbeing_resource_path %>
