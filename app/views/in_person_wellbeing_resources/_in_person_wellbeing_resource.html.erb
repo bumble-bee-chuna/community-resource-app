@@ -1,97 +1,133 @@
-<div id="<%= dom_id in_person_wellbeing_resource %>">
-  <p>
-    <strong>Name:</strong>
-    <%= in_person_wellbeing_resource.name %>
-  </p>
+<div id="<%= dom_id in_person_wellbeing_resource %>" class="resource-display">
+  <div class="display-field">
+    <div class="field-label"><strong>Name:</strong></div>
+    <div class="field-value"><%= in_person_wellbeing_resource.name %></div>
+  </div>
 
-  <p>
-    <strong>Address:</strong>
-    <%= in_person_wellbeing_resource.address %>
-  </p>
+  <div class="display-field">
+    <div class="field-label"><strong>Address:</strong></div>
+    <div class="field-value"><%= in_person_wellbeing_resource.address %></div>
+  </div>
 
-  <p>
-    <strong>Phone:</strong>
-    <%= in_person_wellbeing_resource.phone %>
-  </p>
+  <div class="display-field">
+    <div class="field-label"><strong>Phone:</strong></div>
+    <div class="field-value"><%= in_person_wellbeing_resource.phone %></div>
+  </div>
 
-  <p>
-    <strong>Website:</strong>
-    <%= in_person_wellbeing_resource.website %>
-  </p>
+  <div class="display-field">
+    <div class="field-label"><strong>Website:</strong></div>
+    <div class="field-value">
+      <a href="<%= in_person_wellbeing_resource.website %>"><%= in_person_wellbeing_resource.website %></a>
+    </div>
+  </div>
 
-  <p>
-    <strong>Monday opening hours:</strong>
-    <%= in_person_wellbeing_resource.monday_opening_hours %>
-  </p>
+  <div class="display-field">
+    <div class="field-label"><strong>Hours of Operation:</strong></div>
+    <div class="field-value">
 
-  <p>
-    <strong>Monday closing hours:</strong>
-    <%= in_person_wellbeing_resource.monday_closing_hours %>
-  </p>
+      <table>
+        <tr>
+          <th></th>
+          <th>Opens at:</th>
+          <th>Closes at:</th>
+        </tr>
+        <tr>
+          <td><strong>Monday</strong></td>
+          <% if in_person_wellbeing_resource.monday_opening_hours != nil and in_person_wellbeing_resource.monday_closing_hours != nil %>
+            <td><%= in_person_wellbeing_resource.monday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_wellbeing_resource.monday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
 
-  <p>
-    <strong>Tuesday opening hours:</strong>
-    <%= in_person_wellbeing_resource.tuesday_opening_hours %>
-  </p>
 
-  <p>
-    <strong>Tuesday closing hours:</strong>
-    <%= in_person_wellbeing_resource.tuesday_closing_hours %>
-  </p>
+        <tr>
+          <td><strong>Tuesday</strong></td>
+          <% if in_person_wellbeing_resource.tuesday_opening_hours != nil and in_person_wellbeing_resource.tuesday_closing_hours != nil %>
+            <td><%= in_person_wellbeing_resource.tuesday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_wellbeing_resource.tuesday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
 
-  <p>
-    <strong>Wednesday opening hours:</strong>
-    <%= in_person_wellbeing_resource.wednesday_opening_hours %>
-  </p>
 
-  <p>
-    <strong>Wednesday closing hours:</strong>
-    <%= in_person_wellbeing_resource.wednesday_closing_hours %>
-  </p>
+        <tr>
+          <td><strong>Wednesday</strong></td>
+          <% if in_person_wellbeing_resource.wednesday_opening_hours != nil and in_person_wellbeing_resource.wednesday_closing_hours != nil %>
+            <td><%= in_person_wellbeing_resource.wednesday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_wellbeing_resource.wednesday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
 
-  <p>
-    <strong>Thursday opening hours:</strong>
-    <%= in_person_wellbeing_resource.thursday_opening_hours %>
-  </p>
 
-  <p>
-    <strong>Thursday closing hours:</strong>
-    <%= in_person_wellbeing_resource.thursday_closing_hours %>
-  </p>
+        <tr>
+          <td><strong>Thursday</strong></td>
+          <% if in_person_wellbeing_resource.thursday_opening_hours != nil and in_person_wellbeing_resource.thursday_closing_hours != nil %>
+            <td><%= in_person_wellbeing_resource.thursday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_wellbeing_resource.thursday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
 
-  <p>
-    <strong>Friday opening hours:</strong>
-    <%= in_person_wellbeing_resource.friday_opening_hours %>
-  </p>
 
-  <p>
-    <strong>Friday closing hours:</strong>
-    <%= in_person_wellbeing_resource.friday_closing_hours %>
-  </p>
+        <tr>
+          <td><strong>Friday</strong></td>
+          <% if in_person_wellbeing_resource.friday_opening_hours != nil and in_person_wellbeing_resource.friday_closing_hours != nil %>
+            <td><%= in_person_wellbeing_resource.friday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_wellbeing_resource.friday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
 
-  <p>
-    <strong>Saturday opening hours:</strong>
-    <%= in_person_wellbeing_resource.saturday_opening_hours %>
-  </p>
+        
+        <tr>
+          <td><strong>Saturday</strong></td>
+          <% if in_person_wellbeing_resource.saturday_opening_hours != nil and in_person_wellbeing_resource.saturday_closing_hours != nil %>
+            <td><%= in_person_wellbeing_resource.saturday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_wellbeing_resource.saturday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+        
 
-  <p>
-    <strong>Saturday closing hours:</strong>
-    <%= in_person_wellbeing_resource.saturday_closing_hours %>
-  </p>
+        <tr>
+          <td><strong>Sunday</strong></td>
+          <% if in_person_wellbeing_resource.sunday_opening_hours != nil and in_person_wellbeing_resource.sunday_closing_hours != nil %>
+            <td><%= in_person_wellbeing_resource.sunday_opening_hours.strftime('%I:%M %p') %></td>
+            <td><%= in_person_wellbeing_resource.sunday_closing_hours.strftime('%I:%M %p') %></td>
+          <% else %>
+            <td>Closed</td>
+            <td>Closed</td>
+          <% end %>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
 
-  <p>
-    <strong>Sunday opening hours:</strong>
-    <%= in_person_wellbeing_resource.sunday_opening_hours %>
-  </p>
+  <div class="display-field">
+    <div class="field-label"><strong>Information:</strong></div>
+    <div class="field-value"><%= in_person_wellbeing_resource.information %></div>
+  </div>
 
-  <p>
-    <strong>Sunday closing hours:</strong>
-    <%= in_person_wellbeing_resource.sunday_closing_hours %>
-  </p>
-
-  <p>
-    <strong>Information:</strong>
-    <%= in_person_wellbeing_resource.information %>
-  </p>
+  <% if in_person_wellbeing_resource.services_tag_list.length != 0 %>
+  <div class="display-field">
+    <div class="field-label"><strong>Services Tags:</strong></div>
+    <div class="field-value"><%= in_person_wellbeing_resource.services_tag_list %></div>
+  </div>
+  <% end %>
 
 </div>
