@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "In person recovery resources" %>
+
+<h1>In person recovery resources</h1>
+
+<div id="in_person_recovery_resources">
+  <% @in_person_recovery_resources.each do |in_person_recovery_resource| %>
+    <%= render in_person_recovery_resource %>
+    <p>
+      <%= link_to "Show this in person recovery resource", in_person_recovery_resource %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New in person recovery resource", new_in_person_recovery_resource_path %>

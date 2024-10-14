@@ -1,0 +1,131 @@
+<%= form_with(model: in_person_recovery_resource, :html => {:class => 'resource-form'}) do |form| %>
+  <% if in_person_recovery_resource.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(in_person_recovery_resource.errors.count, "error") %> prohibited this in_person_recovery_resource from being saved:</h2>
+
+      <ul>
+        <% in_person_recovery_resource.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address, :required => true, class: "form-control" %>
+  </div>
+
+   <div class="form-field">
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :website, style: "display: block" %>
+    <%= form.text_field :website, :required => true, class: "form-control" %>
+  </div class="form-field">
+
+  <div class="form-field">
+    <%= form.label :monday_opening_hours, style: "display: block" %>
+    <%= form.text_field :monday_opening_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :monday_closing_hours, style: "display: block" %>
+    <%= form.text_field :monday_closing_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :tuesday_opening_hours, style: "display: block" %>
+    <%= form.text_field :tuesday_opening_hours, :required => true, class: "form-control" %>
+  </div class="form-field">
+
+  <div class="form-field">
+    <%= form.label :tuesday_closing_hours, style: "display: block" %>
+    <%= form.text_field :tuesday_closing_hours, :required => true, class: "form-control" %>
+  </div class="form-field">
+
+  <div class="form-field">
+    <%= form.label :wednesday_opening_hours, style: "display: block" %>
+    <%= form.text_field :wednesday_opening_hours, :required => true, class: "form-control" %>
+  </div class="form-field">
+
+  <div class="form-field">
+    <%= form.label :wednesday_closing_hours, style: "display: block" %>
+    <%= form.text_field :wednesday_closing_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :thursday_opening_hours, style: "display: block" %>
+    <%= form.text_field :thursday_opening_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :thursday_closing_hours, style: "display: block" %>
+    <%= form.text_field :thursday_closing_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :friday_opening_hours, style: "display: block" %>
+    <%= form.text_field :friday_opening_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :friday_closing_hours, style: "display: block" %>
+    <%= form.text_field :friday_closing_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :saturday_opening_hours, style: "display: block" %>
+    <%= form.text_field :saturday_opening_hours, :required => true, class: "form-control" %>
+  </div class="form-field">
+
+  <div class="form-field">
+    <%= form.label :saturday_closing_hours, style: "display: block" %>
+    <%= form.text_field :saturday_closing_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :sunday_opening_hours, style: "display: block" %>
+    <%= form.text_field :sunday_opening_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :sunday_closing_hours, style: "display: block" %>
+    <%= form.text_field :sunday_closing_hours, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :information, style: "display: block" %>
+    <%= form.text_area :information, :required => true, class: "form-control" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :services_tag_list, "Services Offered" %>
+    <%=
+      form.text_field :services_tag_list,
+      value: @in_person_recovery_resource.send(:services_tag_list).to_s,
+      placeholder: 'Recovery Meetings, Community Events, Case Management, etc'
+    %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :recovery_models_tag_list, "Recovery Models Used" %>
+    <%=
+      form.text_field :recovery_models_tag_list,
+      value: @in_person_recovery_resource.send(:recovery_models_tag_list).to_s,
+      placeholder: 'AA, Wellbreity, etc'
+    %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

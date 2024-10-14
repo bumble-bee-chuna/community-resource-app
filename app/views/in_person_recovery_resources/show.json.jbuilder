@@ -1,0 +1,1 @@
+json.partial! "in_person_recovery_resources/in_person_recovery_resource", in_person_recovery_resource: @in_person_recovery_resource

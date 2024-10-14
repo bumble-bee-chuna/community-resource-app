@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_11_203313) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_13_193832) do
   create_table "community_resources", force: :cascade do |t|
     t.string "name"
     t.string "hours_of_operation"
+    t.string "phone"
+    t.string "address"
+    t.string "website"
+    t.text "information"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "in_person_recovery_resources", force: :cascade do |t|
+    t.string "name"
+    t.string "monday_opening_hours"
+    t.string "monday_closing_hours"
+    t.string "tuesday_opening_hours"
+    t.string "tuesday_closing_hours"
+    t.string "wednesday_opening_hours"
+    t.string "wednesday_closing_hours"
+    t.string "thursday_opening_hours"
+    t.string "thursday_closing_hours"
+    t.string "friday_opening_hours"
+    t.string "friday_closing_hours"
+    t.string "saturday_opening_hours"
+    t.string "saturday_closing_hours"
+    t.string "sunday_opening_hours"
+    t.string "sunday_closing_hours"
     t.string "phone"
     t.string "address"
     t.string "website"
