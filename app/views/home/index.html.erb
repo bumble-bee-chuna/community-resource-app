@@ -1,3 +1,53 @@
-<h1>Hello, Rails!</h1>
+<div class="page-heading-container">
+	<h1 class="page-heading__bold">DIY Mini Case Management Tool</h1>
+	<p>This is an atlas of free and sliding scale resources that are meant to support the mental, physical, and emotional wellbeing of folks located on Cowlitz, Multnomah, and XX land (known as Multnomah County).</p>
+</div>
 
-<%= link_to "Community Resources", community_resources_path %>
+
+<div class="home__resource-container">
+	<div class="resource-link">
+	  <h2><%= link_to "Interest-Based Activities", in_person_interest_resources_path %></h2>
+	</div>
+	<div class="resource-description">
+	  Located in Multnomah County, all options are <u><strong>in person</strong></u> and <u><strong>free and reduced cost</strong></u>. Options include things like art, print making, gardening, and many other interests.
+	</div>
+</div>
+
+<div class="home__resource-container">
+	<div class="resource-link">
+	  <h2><%= link_to "In Person Recovery Resources", in_person_recovery_resources_path %></h2>
+	</div>
+	<div class="resource-description">
+	 A list of a variety of in person recovery resources in Multnomah County. Includes a wide variety of:<br />
+  	<ul>
+	  <li>
+	  	<strong>Recovery models:</strong> Including (but not limited to) Recovery Dharma, Wellbreity (Native-based recovery pathway), AA, SMART, NA, Al-Anon, and many more.
+	  </li>
+	  <li>
+	  	<strong>Culturally-specific resources</strong>: Locations and groups specifically for queer/LGBTQIA+, BIPOC, Native, Latiné/o/x, Women's, and Men's, etc.
+	  </li>
+	  <li>
+	  	<strong>More than just meetings:</strong> Recovery gyms, art, free cooking classes, events, and many more options to engage in supportive community.
+	  </li>
+	</ul>
+	</div>
+</div>
+
+<div class="home__resource-container">
+	<div class="resource-link">
+	  <h2><%= link_to "Online Peer & Recovery Groups", online_peer_and_recovery_resources_path %></h2>
+	</div>
+	<div class="resource-description">
+	  A comprehensive listing of peer support groups as well as recovery-based groups. <strong>Peer support groups</strong> are nonclinical groups meant to talk with other folk openly who share a similar lived experience (such as Autism, suicidality, shared-identity-based experiences, etc). <strong>Recovery groups</strong> are meant for folks to get support who live with addiction. A group can be one or both.
+	</div>
+</div>
+
+<div class="home__resource-container">
+	<div class="resource-link">
+	  <h2><%= link_to "Community Wellbeing Resources", in_person_wellbeing_resources_path %></h2>
+	</div>
+	<div class="resource-description">
+	  Community well being resources are offerings in the community such as job/resume help, rental assistance, food pantries, reduced/free cellphone access, disability help, bus passes, etc. We <i>highly</i> recommend you also visit <a href="https://www.211info.org/">211.org</a>.
+	</div>
+</div>
+
