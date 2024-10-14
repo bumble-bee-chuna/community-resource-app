@@ -65,6 +65,6 @@ class InPersonWellbeingResourcesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def in_person_wellbeing_resource_params
-      params.require(:in_person_wellbeing_resource).permit(:name, :address, :phone, :website, :monday_opening_hours, :monday_closing_hours, :tuesday_opening_hours, :tuesday_closing_hours, :wednesday_opening_hours, :wednesday_closing_hours, :thursday_opening_hours, :thursday_closing_hours, :friday_opening_hours, :friday_closing_hours, :saturday_opening_hours, :saturday_closing_hours, :sunday_opening_hours, :sunday_closing_hours, :information, :services_tag_list, :culturally_specific_tag_list)
+      params.require(:in_person_wellbeing_resource).permit(:name, :address, :phone, :website, :bus_routes, :monday_opening_hours, :monday_closing_hours, :tuesday_opening_hours, :tuesday_closing_hours, :wednesday_opening_hours, :wednesday_closing_hours, :thursday_opening_hours, :thursday_closing_hours, :friday_opening_hours, :friday_closing_hours, :saturday_opening_hours, :saturday_closing_hours, :sunday_opening_hours, :sunday_closing_hours, :information, :services_tag_list, :culturally_specific_tag_list)
     end
 end
