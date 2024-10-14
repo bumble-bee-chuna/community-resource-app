@@ -2,14 +2,11 @@
 
 <% content_for :title, "In person recovery resources" %>
 
-<h1>In person recovery resources</h1>
+<h1 class="page-heading">In person recovery resources</h1>
 
 <div id="in_person_recovery_resources">
   <% @in_person_recovery_resources.each do |in_person_recovery_resource| %>
     <%= render in_person_recovery_resource %>
-    <p>
-      <%= link_to "Show this in person recovery resource", in_person_recovery_resource %>
-    </p>
   <% end %>
 </div>
 

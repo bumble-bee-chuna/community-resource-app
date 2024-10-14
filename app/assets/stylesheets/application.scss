@@ -8,6 +8,7 @@
 
 body {
 	font-size: 14px !important;
+  background: #bfbfbf;
 }
 
 .page-heading {
@@ -15,6 +16,9 @@ body {
 }
 
 
+/*
+ * Form styling
+ */
 
 .checkboxes-container {
   display: flex;
@@ -25,13 +29,19 @@ body {
 	}
 }
 
-
-
 .resource-form {
   width: 80%;
   margin: auto;
+  background: white;
+  padding: 20px;
 }
 
+
+
+  
+.form-submit-container {
+  margin: 20px 0 0 0;
+}
 
 .form-field {
   display: flex;
@@ -46,5 +56,35 @@ body {
 
   input, textarea, table {
   	flex: 5;
+  }
+}
+
+
+
+/*
+ * Show styling
+ */
+.resource-display {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 5px 20px;
+  background: #fff;
+
+   .display-field {
+     display: flex;
+     text-align: left;
+     margin: 10px 0;
+
+      .field-label {
+        flex: 2;
+      }
+
+      .field-value {
+        flex: 5;
+      }
+   }
+
+   table {
+     width: 100%;
   }
 }
