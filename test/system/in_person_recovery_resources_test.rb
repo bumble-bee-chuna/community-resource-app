@@ -44,24 +44,24 @@ class InPersonRecoveryResourcesTest < ApplicationSystemTestCase
     click_on "Edit this in person recovery resource", match: :first
 
     fill_in "Address", with: @in_person_recovery_resource.address
-    fill_in "Friday closing hours", with: @in_person_recovery_resource.friday_closing_hours
-    fill_in "Friday opening hours", with: @in_person_recovery_resource.friday_opening_hours
+    fill_in "Friday closing hours", with: @in_person_recovery_resource.friday_closing_hours.to_s
+    fill_in "Friday opening hours", with: @in_person_recovery_resource.friday_opening_hours.to_s
     fill_in "Information", with: @in_person_recovery_resource.information
-    fill_in "Monday closing hours", with: @in_person_recovery_resource.monday_closing_hours
-    fill_in "Monday opening hours", with: @in_person_recovery_resource.monday_opening_hours
+    fill_in "Monday closing hours", with: @in_person_recovery_resource.monday_closing_hours.to_s
+    fill_in "Monday opening hours", with: @in_person_recovery_resource.monday_opening_hours.to_s
     fill_in "Name", with: @in_person_recovery_resource.name
     fill_in "Phone", with: @in_person_recovery_resource.phone
-    fill_in "Saturday closing hours", with: @in_person_recovery_resource.saturday_closing_hours
-    fill_in "Saturday opening hours", with: @in_person_recovery_resource.saturday_opening_hours
-    fill_in "Sunday closing hours", with: @in_person_recovery_resource.sunday_closing_hours
-    fill_in "Sunday opening hours", with: @in_person_recovery_resource.sunday_opening_hours
-    fill_in "Thursday closing hours", with: @in_person_recovery_resource.thursday_closing_hours
-    fill_in "Thursday opening hours", with: @in_person_recovery_resource.thursday_opening_hours
-    fill_in "Tuesday closing hours", with: @in_person_recovery_resource.tuesday_closing_hours
-    fill_in "Tuesday opening hours", with: @in_person_recovery_resource.tuesday_opening_hours
+    fill_in "Saturday closing hours", with: @in_person_recovery_resource.saturday_closing_hours.to_s
+    fill_in "Saturday opening hours", with: @in_person_recovery_resource.saturday_opening_hours.to_s
+    fill_in "Sunday closing hours", with: @in_person_recovery_resource.sunday_closing_hours.to_s
+    fill_in "Sunday opening hours", with: @in_person_recovery_resource.sunday_opening_hours.to_s
+    fill_in "Thursday closing hours", with: @in_person_recovery_resource.thursday_closing_hours.to_s
+    fill_in "Thursday opening hours", with: @in_person_recovery_resource.thursday_opening_hours.to_s
+    fill_in "Tuesday closing hours", with: @in_person_recovery_resource.tuesday_closing_hours.to_s
+    fill_in "Tuesday opening hours", with: @in_person_recovery_resource.tuesday_opening_hours.to_s
     fill_in "Website", with: @in_person_recovery_resource.website
-    fill_in "Wednesday closing hours", with: @in_person_recovery_resource.wednesday_closing_hours
-    fill_in "Wednesday opening hours", with: @in_person_recovery_resource.wednesday_opening_hours
+    fill_in "Wednesday closing hours", with: @in_person_recovery_resource.wednesday_closing_hours.to_s
+    fill_in "Wednesday opening hours", with: @in_person_recovery_resource.wednesday_opening_hours.to_s
     click_on "Update In person recovery resource"
 
     assert_text "In person recovery resource was successfully updated"

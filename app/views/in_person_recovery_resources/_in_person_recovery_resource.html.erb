@@ -10,89 +10,52 @@
   </p>
 
   <p>
-    <strong>Monday opening hours:</strong>
-    <%= in_person_recovery_resource.monday_opening_hours %>
-  </p>
-
-  <p>
-    <strong>Monday closing hours:</strong>
-    <%= in_person_recovery_resource.monday_closing_hours %>
-  </p>
-
-  <p>
-    <strong>Tuesday opening hours:</strong>
-    <%= in_person_recovery_resource.tuesday_opening_hours %>
-  </p>
-
-  <p>
-    <strong>Tuesday closing hours:</strong>
-    <%= in_person_recovery_resource.tuesday_closing_hours %>
-  </p>
-
-  <p>
-    <strong>Wednesday opening hours:</strong>
-    <%= in_person_recovery_resource.wednesday_opening_hours %>
-  </p>
-
-  <p>
-    <strong>Wednesday closing hours:</strong>
-    <%= in_person_recovery_resource.wednesday_closing_hours %>
-  </p>
-
-  <p>
-    <strong>Thursday opening hours:</strong>
-    <%= in_person_recovery_resource.thursday_opening_hours %>
-  </p>
-
-  <p>
-    <strong>Thursday closing hours:</strong>
-    <%= in_person_recovery_resource.thursday_closing_hours %>
-  </p>
-
-  <p>
-    <strong>Friday opening hours:</strong>
-    <%= in_person_recovery_resource.friday_opening_hours %>
-  </p>
-
-  <p>
-    <strong>Friday closing hours:</strong>
-    <%= in_person_recovery_resource.friday_closing_hours %>
-  </p>
-
-  <p>
-    <strong>Saturday opening hours:</strong>
-    <%= in_person_recovery_resource.saturday_opening_hours %>
-  </p>
-
-  <p>
-    <strong>Saturday closing hours:</strong>
-    <%= in_person_recovery_resource.saturday_closing_hours %>
-  </p>
-
-  <p>
-    <strong>Sunday opening hours:</strong>
-    <%= in_person_recovery_resource.sunday_opening_hours %>
-  </p>
-
-  <p>
-    <strong>Sunday closing hours:</strong>
-    <%= in_person_recovery_resource.sunday_closing_hours %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= in_person_recovery_resource.phone %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= in_person_recovery_resource.address %>
-  </p>
-
-  <p>
     <strong>Website:</strong>
     <%= in_person_recovery_resource.website %>
   </p>
+
+  <table>
+      <tr>
+        <th></th>
+        <th>Opens at:</th>
+        <th>Closes at:</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td><%= in_person_recovery_resource.monday_opening_hours.strftime('%I:%M %p') %></td>
+        <td><%= in_person_recovery_resource.monday_closing_hours.strftime('%I:%M %p') %></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td><%= in_person_recovery_resource.tuesday_opening_hours.strftime('%I:%M %p') %></td>
+        <td><%= in_person_recovery_resource.tuesday_closing_hours.strftime('%I:%M %p') %></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td><%= in_person_recovery_resource.wednesday_opening_hours.strftime('%I:%M %p') %></td>
+        <td><%= in_person_recovery_resource.wednesday_closing_hours.strftime('%I:%M %p') %></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td><%= in_person_recovery_resource.thursday_opening_hours.strftime('%I:%M %p') %></td>
+        <td><%= in_person_recovery_resource.thursday_closing_hours.strftime('%I:%M %p') %></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td><%= in_person_recovery_resource.friday_opening_hours.strftime('%I:%M %p') %></td>
+        <td><%= in_person_recovery_resource.friday_closing_hours.strftime('%I:%M %p') %></td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td><%= in_person_recovery_resource.saturday_opening_hours.strftime('%I:%M %p') %></td>
+        <td><%= in_person_recovery_resource.saturday_closing_hours.strftime('%I:%M %p') %></td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td><%= in_person_recovery_resource.sunday_opening_hours.strftime('%I:%M %p') %></td>
+        <td><%= in_person_recovery_resource.sunday_closing_hours.strftime('%I:%M %p') %></td>
+      </tr>
+    </table>
 
   <p>
     <strong>Information:</strong>
@@ -112,7 +75,5 @@
     <%= in_person_recovery_resource.recovery_models_tag_list %>
   </p>
   <% end %>
-
-
 
 </div>

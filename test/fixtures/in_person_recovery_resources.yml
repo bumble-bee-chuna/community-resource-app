@@ -3,43 +3,41 @@
 one:
   name: MyString
   address: MyString
-  monday_opening_hours: MyString
-  monday_closing_hours: MyString
-  tuesday_opening_hours: MyString
-  tuesday_closing_hours: MyString
-  wednesday_opening_hours: MyString
-  wednesday_closing_hours: MyString
-  thursday_opening_hours: MyString
-  thursday_closing_hours: MyString
-  friday_opening_hours: MyString
-  friday_closing_hours: MyString
-  saturday_opening_hours: MyString
-  saturday_closing_hours: MyString
-  sunday_opening_hours: MyString
-  sunday_closing_hours: MyString
   phone: MyString
-  address: MyString
   website: MyString
+  monday_opening_hours: 2024-10-14 05:20:20
+  monday_closing_hours: 2024-10-14 05:20:20
+  tuesday_opening_hours: 2024-10-14 05:20:20
+  tuesday_closing_hours: 2024-10-14 05:20:20
+  wednesday_opening_hours: 2024-10-14 05:20:20
+  wednesday_closing_hours: 2024-10-14 05:20:20
+  thursday_opening_hours: 2024-10-14 05:20:20
+  thursday_closing_hours: 2024-10-14 05:20:20
+  friday_opening_hours: 2024-10-14 05:20:20
+  friday_closing_hours: 2024-10-14 05:20:20
+  saturday_opening_hours: 2024-10-14 05:20:20
+  saturday_closing_hours: 2024-10-14 05:20:20
+  sunday_opening_hours: 2024-10-14 05:20:20
+  sunday_closing_hours: 2024-10-14 05:20:20
   information: MyText
 
 two:
   name: MyString
   address: MyString
-  monday_opening_hours: MyString
-  monday_closing_hours: MyString
-  tuesday_opening_hours: MyString
-  tuesday_closing_hours: MyString
-  wednesday_opening_hours: MyString
-  wednesday_closing_hours: MyString
-  thursday_opening_hours: MyString
-  thursday_closing_hours: MyString
-  friday_opening_hours: MyString
-  friday_closing_hours: MyString
-  saturday_opening_hours: MyString
-  saturday_closing_hours: MyString
-  sunday_opening_hours: MyString
-  sunday_closing_hours: MyString
   phone: MyString
-  address: MyString
   website: MyString
+  monday_opening_hours: 2024-10-14 05:20:20
+  monday_closing_hours: 2024-10-14 05:20:20
+  tuesday_opening_hours: 2024-10-14 05:20:20
+  tuesday_closing_hours: 2024-10-14 05:20:20
+  wednesday_opening_hours: 2024-10-14 05:20:20
+  wednesday_closing_hours: 2024-10-14 05:20:20
+  thursday_opening_hours: 2024-10-14 05:20:20
+  thursday_closing_hours: 2024-10-14 05:20:20
+  friday_opening_hours: 2024-10-14 05:20:20
+  friday_closing_hours: 2024-10-14 05:20:20
+  saturday_opening_hours: 2024-10-14 05:20:20
+  saturday_closing_hours: 2024-10-14 05:20:20
+  sunday_opening_hours: 2024-10-14 05:20:20
+  sunday_closing_hours: 2024-10-14 05:20:20
   information: MyText
