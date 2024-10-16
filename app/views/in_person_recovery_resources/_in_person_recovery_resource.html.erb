@@ -151,7 +151,11 @@
   <% if in_person_recovery_resource.recovery_models_tag_list.length != 0 %>
   <div class="display-field">
     <div class="field-label"><strong>Recovery Models Tags:</strong></div>
-    <div class="field-value"><%= in_person_recovery_resource.recovery_models_tag_list %></div>
+    <div class="field-value">
+      <% in_person_recovery_resource.recovery_models_tag_list.each do |t| %>
+          <%= link_to t, tagged_path(tag: t) %><br/>
+      <% end %>
+    </div>
   </div>
   <% end %>
 

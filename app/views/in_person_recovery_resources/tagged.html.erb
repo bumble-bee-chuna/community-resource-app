@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "In person recovery resources" %>
+
+<%= params[:tag] %>
+
+
+
+<h1 class="page-heading">In person recovery resources</h1>
+
+<div id="in_person_recovery_resources">
+  <% @in_person_recovery_resources.tagged_with(params[:tag]).each do |in_person_recovery_resource| %>
+    <%= render in_person_recovery_resource %>
+  <% end %>
+</div>
+
+<%= link_to "New in person recovery resource", new_in_person_recovery_resource_path %>

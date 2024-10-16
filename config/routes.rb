@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  get '/tagged', to: "in_person_recovery_resources#tagged"
+
   root :to => "home#index"
   # root :to => "in_person_recovery_resources#index"
 end
