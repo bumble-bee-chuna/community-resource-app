@@ -60,6 +60,8 @@ class InPersonRecoveryResourcesController < ApplicationController
   def tagged
     if params[:recovery_models_tags].present?
       @in_person_recovery_resources = InPersonRecoveryResource.tagged_with(params[:recovery_models_tag_list])
+    elsif params[:services_tag_list].present?
+      @in_person_recovery_resources = InPersonRecoveryResource.tagged_with(params[:services_tag_list])
     else
       @in_person_recovery_resources = InPersonRecoveryResource.all
     end
