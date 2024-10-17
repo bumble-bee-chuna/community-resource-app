@@ -152,7 +152,11 @@
   <% if in_person_interest_resource.interests_tag_list.length != 0 %>
   <div class="display-field">
     <div class="field-label"><strong>Interests Tags:</strong></div>
-    <div class="field-value"><%= in_person_interest_resource.interests_tag_list %></div>
+    <div class="field-value">
+      <% in_person_interest_resource.interests_tag_list.each do |t| %>
+          <%= link_to t, interest_tagged_path(tag: t) %><br/>
+      <% end %>
+    </div>
   </div>
   <% end %>
 
