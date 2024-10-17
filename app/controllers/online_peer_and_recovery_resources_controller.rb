@@ -47,6 +47,15 @@ class OnlinePeerAndRecoveryResourcesController < ApplicationController
     end
   end
 
+
+  def tagged
+    if params[:lived_experience_tag_list].present?
+      @online_peer_and_recovery_resources = OnlinePeerAndRecoveryResource.tagged_with(params[:lived_experience_tag_list])
+    else
+      @online_peer_and_recovery_resources = OnlinePeerAndRecoveryResource.all
+    end
+  end
+
   # DELETE /online_peer_and_recovery_resources/1 or /online_peer_and_recovery_resources/1.json
   def destroy
     @online_peer_and_recovery_resource.destroy!

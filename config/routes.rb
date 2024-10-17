@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/tagged', to: "in_person_recovery_resources#tagged"
   get '/wellbeing_tagged', to: "in_person_wellbeing_resources#tagged"
   get '/interest_tagged', to: "in_person_interest_resources#tagged"
+  get '/peer_tagged', to: "online_peer_and_recovery_resources#tagged"
 
   root :to => "home#index"
   # root :to => "in_person_recovery_resources#index"

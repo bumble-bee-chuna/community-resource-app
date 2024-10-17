@@ -33,4 +33,15 @@
     <div class="field-value"><%= online_peer_and_recovery_resource.description %></div>
   </div>
 
+  <% if online_peer_and_recovery_resource.lived_experience_tag_list.length != 0 %>
+  <div class="display-field">
+    <div class="field-label"><strong>Lived Experience Tags:</strong></div>
+    <div class="field-value">
+      <% online_peer_and_recovery_resource.lived_experience_tag_list.each do |t| %>
+        <%= link_to t, peer_tagged_path(tag: t) %><br/>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+
 </div>
