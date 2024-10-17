@@ -57,6 +57,19 @@ class InPersonInterestResourcesController < ApplicationController
     end
   end
 
+
+  def tagged
+    if params[:interests_tag_list].present?
+      @in_person_interest_resources = InPersonInterestResource.tagged_with(params[:interests_tag_list])
+    elsif params[:services_tag_list].present?
+      @in_person_interest_resources = InPersonInterestResource.tagged_with(params[:services_tag_list])
+    else
+      @in_person_interest_resources = InPersonInterestResource.all
+    end
+  end
+
+ 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_in_person_interest_resource

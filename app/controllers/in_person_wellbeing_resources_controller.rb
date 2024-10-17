@@ -57,6 +57,17 @@ class InPersonWellbeingResourcesController < ApplicationController
     end
   end
 
+
+  def tagged
+    if params[:interests_tag_list].present?
+      @in_person_wellbeing_resources = InPersonWellbeingResource.tagged_with(params[:interests_tag_list])
+    elsif params[:culturally_specific_tag_list].present?
+      @in_person_wellbeing_resources = InPersonWellbeingResource.tagged_with(params[:services_tag_list])
+    else
+      @in_person_wellbeing_resources = InPersonWellbeingResource.all
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_in_person_wellbeing_resource

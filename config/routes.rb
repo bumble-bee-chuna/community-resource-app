@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get '/tagged', to: "in_person_recovery_resources#tagged"
-  get '/tagged', to: "in_person_wellbeing_resources#tagged"
+  get '/wellbeing_tagged', to: "in_person_wellbeing_resources#tagged"
 
   root :to => "home#index"
   # root :to => "in_person_recovery_resources#index"

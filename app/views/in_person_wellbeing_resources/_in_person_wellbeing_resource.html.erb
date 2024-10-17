@@ -139,7 +139,11 @@
   <% if in_person_wellbeing_resource.services_tag_list.length != 0 %>
   <div class="display-field">
     <div class="field-label"><strong>Services Tags:</strong></div>
-    <div class="field-value"><%= in_person_wellbeing_resource.services_tag_list %></div>
+    <div class="field-value">
+      <% in_person_wellbeing_resource.services_tag_list.each do |t| %>
+          <%= link_to t, wellbeing_tagged_path(tag: t) %><br/>
+      <% end %>
+    </div>
   </div>
   <% end %>
 
