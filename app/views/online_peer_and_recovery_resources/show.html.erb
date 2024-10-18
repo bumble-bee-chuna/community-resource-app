@@ -3,8 +3,12 @@
 <%= render @online_peer_and_recovery_resource %>
 
 <div>
-  <%= link_to "Edit this online peer and recovery resource", edit_online_peer_and_recovery_resource_path(@online_peer_and_recovery_resource) %> |
+  <% if user_signed_in? %>
+    <%= link_to "Edit this online peer and recovery resource", edit_online_peer_and_recovery_resource_path(@online_peer_and_recovery_resource) %> |
+  <% end %>
   <%= link_to "Back to online peer and recovery resources", online_peer_and_recovery_resources_path %>
 
-  <%= button_to "Destroy this online peer and recovery resource", @online_peer_and_recovery_resource, method: :delete %>
+  <% if user_signed_in? %>
+    <%= button_to "Destroy this online peer and recovery resource", @online_peer_and_recovery_resource, method: :delete %>
+  <% end %>
 </div>

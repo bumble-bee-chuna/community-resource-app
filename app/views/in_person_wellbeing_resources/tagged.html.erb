@@ -13,4 +13,6 @@
   <% end %>
 </div>
 
-<%= link_to "New in person wellbeing resource", new_in_person_wellbeing_resource_path %>
+<% if user_signed_in? %>
+  <%= link_to "New in person wellbeing resource", new_in_person_wellbeing_resource_path %>
+<% end %>
