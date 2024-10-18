@@ -3,6 +3,7 @@
 <% content_for :title, "In person recovery resources" %>
 
 <h1 class="page-heading">In person recovery resources</h1>
+<h3>Tagged with "<%= params[:tag] %>"</h3>
 
 <div id="in_person_recovery_resources">
   <% @in_person_recovery_resources.tagged_with(params[:tag]).each do |in_person_recovery_resource| %>
