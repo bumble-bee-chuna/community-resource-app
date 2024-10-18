@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :online_peer_and_recovery_resources
   resources :in_person_interest_resources
   resources :in_person_wellbeing_resources
@@ -24,5 +25,6 @@ Rails.application.routes.draw do
   get '/peer_tagged', to: "online_peer_and_recovery_resources#tagged"
 
   root :to => "home#index"
+
   # root :to => "in_person_recovery_resources#index"
 end
