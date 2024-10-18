@@ -1,113 +1,115 @@
-<%= form_with(model: in_person_recovery_resource, :html => {:class => 'resource-form'}) do |form| %>
-  <% if in_person_recovery_resource.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(in_person_recovery_resource.errors.count, "error") %> prohibited this in_person_recovery_resource from being saved:</h2>
+<% if user_signed_in? %>
+  <%= form_with(model: in_person_recovery_resource, :html => {:class => 'resource-form'}) do |form| %>
+    <% if in_person_recovery_resource.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(in_person_recovery_resource.errors.count, "error") %> prohibited this in_person_recovery_resource from being saved:</h2>
 
-      <ul>
-        <% in_person_recovery_resource.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% in_person_recovery_resource.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-field">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name, :required => true, class: "form-control" %>
+    </div>
+
+    <div class="form-field">
+      <%= form.label :address, style: "display: block" %>
+      <%= form.text_field :address, :required => true, class: "form-control" %>
+    </div>
+    
+    <div class="form-field">
+      <%= form.label :bus_routes, style: "display: block" %>
+      <%= form.text_field :bus_routes, class: "form-control" %>
+    </div class="form-field">
+
+     <div class="form-field">
+      <%= form.label :phone, style: "display: block" %>
+      <%= form.text_field :phone, class: "form-control" %>
+    </div>
+
+    <div class="form-field">
+      <%= form.label :website, style: "display: block" %>
+      <%= form.text_field :website, :required => true, class: "form-control" %>
+    </div class="form-field">
+
+
+    <div class="form-field">
+      <label style="display: block">Hours of Operation</label>
+      <table>
+        <tr>
+          <th></th>
+          <th>Opens at:</th>
+          <th>Closes at:</th>
+        </tr>
+        <tr>
+          <td>Monday</td>
+          <td><%= form.time_field :monday_opening_hours, class: "form-control" %></td>
+          <td><%= form.time_field :monday_closing_hours, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td><%= form.time_field :tuesday_opening_hours, class: "form-control" %></td>
+          <td><%= form.time_field :tuesday_closing_hours, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td><%= form.time_field :wednesday_opening_hours, class: "form-control" %></td>
+          <td><%= form.time_field :wednesday_closing_hours, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td><%= form.time_field :thursday_opening_hours, class: "form-control" %></td>
+          <td><%= form.time_field :thursday_closing_hours, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td><%= form.time_field :friday_opening_hours, class: "form-control" %></td>
+          <td><%= form.time_field :friday_closing_hours, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td><%= form.time_field :saturday_opening_hours, class: "form-control" %></td>
+          <td><%= form.time_field :saturday_closing_hours, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td><%= form.time_field :sunday_opening_hours, class: "form-control" %></td>
+          <td><%= form.time_field :sunday_closing_hours, class: "form-control" %></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="form-field">
+      <%= form.label :information, style: "display: block" %>
+      <%= form.text_area :information, :required => true, class: "form-control" %>
+    </div>
+
+    <div class="form-field">
+      <%= form.label :services_tag_list, "Services Offered" %>
+      <%=
+        form.text_field :services_tag_list,
+        value: @in_person_recovery_resource.send(:services_tag_list).to_s,
+        placeholder: 'Recovery Meetings, Community Events, Case Management, etc'
+      %>
+    </div>
+
+    <div class="form-field">
+      <%= form.label :recovery_models_tag_list, "Recovery Models Used" %>
+      <%=
+        form.text_field :recovery_models_tag_list,
+        value: @in_person_recovery_resource.send(:recovery_models_tag_list).to_s,
+        placeholder: 'AA, Wellbreity, etc'
+      %>
+    </div>
+
+
+    <div class="form-submit-container">
+      <%= form.submit :value => "Update In Person Recovery Resource", :class => 'btn btn-primary' %>
     </div>
   <% end %>
-
-  <div class="form-field">
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address, :required => true, class: "form-control" %>
-  </div>
-  
-  <div class="form-field">
-    <%= form.label :bus_routes, style: "display: block" %>
-    <%= form.text_field :bus_routes, class: "form-control" %>
-  </div class="form-field">
-
-   <div class="form-field">
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :website, style: "display: block" %>
-    <%= form.text_field :website, :required => true, class: "form-control" %>
-  </div class="form-field">
-
-
-  <div class="form-field">
-    <label style="display: block">Hours of Operation</label>
-    <table>
-      <tr>
-        <th></th>
-        <th>Opens at:</th>
-        <th>Closes at:</th>
-      </tr>
-      <tr>
-        <td>Monday</td>
-        <td><%= form.time_field :monday_opening_hours, class: "form-control" %></td>
-        <td><%= form.time_field :monday_closing_hours, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td>Tuesday</td>
-        <td><%= form.time_field :tuesday_opening_hours, class: "form-control" %></td>
-        <td><%= form.time_field :tuesday_closing_hours, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td>Wednesday</td>
-        <td><%= form.time_field :wednesday_opening_hours, class: "form-control" %></td>
-        <td><%= form.time_field :wednesday_closing_hours, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td>Thursday</td>
-        <td><%= form.time_field :thursday_opening_hours, class: "form-control" %></td>
-        <td><%= form.time_field :thursday_closing_hours, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td>Friday</td>
-        <td><%= form.time_field :friday_opening_hours, class: "form-control" %></td>
-        <td><%= form.time_field :friday_closing_hours, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td>Saturday</td>
-        <td><%= form.time_field :saturday_opening_hours, class: "form-control" %></td>
-        <td><%= form.time_field :saturday_closing_hours, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td>Sunday</td>
-        <td><%= form.time_field :sunday_opening_hours, class: "form-control" %></td>
-        <td><%= form.time_field :sunday_closing_hours, class: "form-control" %></td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :information, style: "display: block" %>
-    <%= form.text_area :information, :required => true, class: "form-control" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :services_tag_list, "Services Offered" %>
-    <%=
-      form.text_field :services_tag_list,
-      value: @in_person_recovery_resource.send(:services_tag_list).to_s,
-      placeholder: 'Recovery Meetings, Community Events, Case Management, etc'
-    %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :recovery_models_tag_list, "Recovery Models Used" %>
-    <%=
-      form.text_field :recovery_models_tag_list,
-      value: @in_person_recovery_resource.send(:recovery_models_tag_list).to_s,
-      placeholder: 'AA, Wellbreity, etc'
-    %>
-  </div>
-
-
-  <div class="form-submit-container">
-    <%= form.submit :value => "Update In Person Recovery Resource", :class => 'btn btn-primary' %>
-  </div>
 <% end %>
