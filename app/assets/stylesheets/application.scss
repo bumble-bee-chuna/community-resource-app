@@ -30,6 +30,12 @@ strong, h1, h2, h3, h4, h5 {
   font-optical-sizing: auto;
 }
 
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 40px 0px;
+}
+
 .page-heading {
 	margin: 20px 0;
 }
@@ -144,11 +150,20 @@ footer {
 
   .field-label {
     padding-right: 10px;
+    margin-bottom: 10px;
   }
 
   .field-label > table {
-      font-size: 14px;
-    }
+    font-size: 14px;
+  }
+
+  .display-field__big-field {
+    flex-direction: column;
+  }
+
+  .display-field {
+    margin-bottom: 20px !important;
+  }
 }
 
 /*
@@ -251,3 +266,24 @@ footer {
     font-size: 20px;
     line-height: 1.8em;
   }
+
+
+/*
+ * Tagged Page Style 
+ */
+
+.tagged-with {
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 20px 0px;
+  font-size: 14px;
+  font-weight: 600;
+  max-width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: $small) { 
+  .tagged-with {
+    max-width: 100%;
+  }
+}

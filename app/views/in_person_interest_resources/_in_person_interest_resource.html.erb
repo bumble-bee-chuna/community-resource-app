@@ -41,7 +41,7 @@
     <% end %>
   </div>
 
-  <div class="display-field">
+  <div class="display-field display-field__big-field">
     <div class="field-label"><strong>Hours of Operation:</strong></div>
     <div class="field-value">
       <table>
@@ -138,13 +138,13 @@
   </div>
 
   <% if in_person_interest_resource.pricing_accomodations != "" and in_person_interest_resource.pricing_accomodations != nil %>
-  <div class="display-field">
-    <div class="field-label"><strong>Pricing Accomodations</strong></div>
+  <div class="display-field display-field__big-field">
+    <div class="field-label"><strong>Pricing Accomodations:</strong></div>
     <div class="field-value"><%= in_person_interest_resource.pricing_accomodations %></div>
   </div>
   <% end %>
 
-  <div class="display-field">
+  <div class="display-field display-field__big-field">
     <div class="field-label"><strong>Information:</strong></div>
     <div class="field-value"><%= in_person_interest_resource.information %></div>
   </div>
