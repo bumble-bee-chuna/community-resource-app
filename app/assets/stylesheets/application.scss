@@ -109,7 +109,7 @@ footer {
  * Show styling
  */
 .resource-display {
-  max-width: 500px;
+  max-width: 80%;
   margin: 40px auto;
   padding: 5px 20px;
   background: #fff;
@@ -131,7 +131,24 @@ footer {
 
    table {
      width: 100%;
+
+     @media screen and (max-width: $small) { 
+      font-size: 14px;
+     }
   }
+}
+@media screen and (max-width: $small) { 
+  .resource-display {
+    max-width: 100%;
+  }
+
+  .field-label {
+    padding-right: 10px;
+  }
+
+  .field-label > table {
+      font-size: 14px;
+    }
 }
 
 /*
