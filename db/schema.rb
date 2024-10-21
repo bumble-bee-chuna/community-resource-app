@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_10_18_183040) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "community_resources", force: :cascade do |t|
     t.string "name"
     t.string "hours_of_operation"
@@ -110,11 +113,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_18_183040) do
   end
 
   create_table "taggings", force: :cascade do |t|
-    t.integer "tag_id"
+    t.bigint "tag_id"
     t.string "taggable_type"
-    t.integer "taggable_id"
+    t.bigint "taggable_id"
     t.string "tagger_type"
-    t.integer "tagger_id"
+    t.bigint "tagger_id"
     t.string "context", limit: 128
     t.datetime "created_at", precision: nil
     t.string "tenant", limit: 128
