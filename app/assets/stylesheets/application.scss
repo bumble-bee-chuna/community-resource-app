@@ -20,7 +20,7 @@ $medium: 900px;
 body {
 	font-size: 14px !important;
   /*background: #bfbfbf;*/
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -31,6 +31,13 @@ strong, h1, h2, h3, h4, h5 {
 
 .page-heading {
 	margin: 20px 0;
+}
+
+@media screen and (max-width: $small) { 
+  body {
+    font-size: 17px !important;
+    line-height: 1.7em;
+  }
 }
 
 
@@ -125,6 +132,7 @@ strong, h1, h2, h3, h4, h5 {
 
   .page-heading__bold {
     font-weight: 800;
+    line-height: 1.3em;
   }
 
   .resource-link, .resource-description {
@@ -148,10 +156,19 @@ strong, h1, h2, h3, h4, h5 {
 
 
   @media screen and (max-width: $small) {
+
+    .page-heading-container {
+      margin: 40px auto !important;
+    }
+
+    .page-heading__bold {
+      margin-bottom: 30px;
+    }
+
     .resource-link > h2 {
       margin: 0px !important;
-      padding: 0px;
-      font-size: 16px;
+      padding: 0px 0px 10px 0px;
+      font-size: 23px;
       font-weight: 700;
       line-height: 1.4em;
     }

@@ -2,15 +2,6 @@
 <p class="alert"><%= alert %></p>
 
 
-<% if user_signed_in? %>
-  <h1>Welcome Home, <%= current_user.email %></h1>
-  <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-<% else %>
-  <h1>Home</h1>
-  <%= link_to 'Sign in', new_user_session_path %>
-<% end %>
-
-
 <div class="page-heading-container">
 	<h1 class="page-heading__bold">DIY Mini Case Management Tool</h1>
 	<p>This is an atlas of free and sliding scale resources that are meant to support the mental, physical, and emotional wellbeing of folks located on Cowlitz, Multnomah, and Clackamas land (referred to as Multnomah County, Oregon).</p>
