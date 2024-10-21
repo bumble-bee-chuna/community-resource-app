@@ -11,7 +11,7 @@
  * Variables
  */
 
-$small: 400px;
+$small: 999px;
 $medium: 900px;
 
 
@@ -170,7 +170,7 @@ footer {
 
 
 
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 1000px) {
     .home__resource-container {
       max-width: 80%;
     }
@@ -205,6 +205,11 @@ footer {
     .home__resource-container {
       flex-direction: column;
       padding: 30px 20px;
+    }
+
+    .page-heading-container {
+      max-width: 100% !important;
+      font-size: 17px !important;
     }
   }
 
