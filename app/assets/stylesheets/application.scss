@@ -118,9 +118,9 @@ strong, h1, h2, h3, h4, h5 {
     display: flex;
     text-align: left;
     margin: 40px 0px;
-      padding: 30px;
-      font-family: "Montserrat", sans-serif;
-      font-optical-sizing: auto;
+    padding: 40px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
   }
 
   .page-heading__bold {
@@ -156,8 +156,18 @@ strong, h1, h2, h3, h4, h5 {
       line-height: 1.4em;
     }
 
+    .resource-link {
+      margin-bottom: 10px;
+    }
+
     .resource-description {
       flex: 2;
+      margin: 0;
+    }
+
+    .home__resource-container {
+      flex-direction: column;
+      padding: 30px 20px;
     }
   }
 
