@@ -18,7 +18,8 @@ $medium: 900px;
 
 
 body {
-	font-size: 14px !important;
+	font-size: 17px !important;
+  line-height: 1.7em;
   /*background: #bfbfbf;*/
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -35,9 +36,19 @@ strong, h1, h2, h3, h4, h5 {
 
 @media screen and (max-width: $small) { 
   body {
-    font-size: 17px !important;
-    line-height: 1.7em;
+    
   }
+}
+
+footer {
+  text-align: center;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.3);
+  padding: 20px 0px 20px 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: 700;
 }
 
 
@@ -124,7 +135,7 @@ strong, h1, h2, h3, h4, h5 {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     display: flex;
     text-align: left;
-    margin: 40px 0px;
+    margin: 40px auto;
     padding: 40px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -133,6 +144,7 @@ strong, h1, h2, h3, h4, h5 {
   .page-heading__bold {
     font-weight: 800;
     line-height: 1.3em;
+    margin-bottom: 30px;
   }
 
   .resource-link, .resource-description {
@@ -141,6 +153,8 @@ strong, h1, h2, h3, h4, h5 {
 
   .resource-link > h2 {
     margin-top: 0;
+    font-weight: 700;
+    line-height: 1.35em;
   }
 
   .resource-description {
@@ -155,6 +169,12 @@ strong, h1, h2, h3, h4, h5 {
   }
 
 
+
+  @media screen and (min-width: 401px) {
+    .home__resource-container {
+      max-width: 80%;
+    }
+  }
   @media screen and (max-width: $small) {
 
     .page-heading-container {
@@ -197,6 +217,8 @@ strong, h1, h2, h3, h4, h5 {
   }
 
   .page-heading-container {
-    max-width: 650px;
+    max-width: 80%;
     margin: 100px auto;
+    font-size: 20px;
+    line-height: 1.8em;
   }
