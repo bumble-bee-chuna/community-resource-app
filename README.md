@@ -1,25 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Community Resource App is a database of mental health and well being resources available in Multnomah County, Oregon. The longer term goal is to make the application boiler template enough to be used in other counties seamlessly.
 
-Things you may want to cover:
+Here are some specs:
 
 * Ruby version
+ruby 3.3.5
+
+* Rails version
+Rails 7.2.1
 
 * System dependencies
-
-* Configuration
+Database used is Postgres in development, test, and production. Please have that installed in order to run the app locally.
 
 * Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# community-resource-app
+In the terminal run `rake db:migrate`.
