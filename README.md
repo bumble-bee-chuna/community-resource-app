@@ -1,6 +1,6 @@
 # README
 
-Community Resource App is a database of mental health and well being resources available in Multnomah County, Oregon. The longer term goal is to make the application boiler template enough to be used in other counties seamlessly.
+Community Resource App is a database of mental health and well being resources available in Multnomah County, Oregon. The longer term goal is to make the application boiler plate enough to be used in other counties seamlessly.
 
 Here are some specs:
 
