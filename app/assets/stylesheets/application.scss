@@ -156,12 +156,9 @@ footer {
     font-size: 14px;
   }
 
-  .display-field__big-field {
-    flex-direction: column;
-  }
-
   .display-field {
     margin-bottom: 20px !important;
+    flex-direction: column;
   }
 }
 
@@ -265,6 +262,7 @@ footer {
     font-size: 20px;
     line-height: 1.8em;
   }
+
 .show-link {
   text-align:center;
   margin: 30px 0px;
