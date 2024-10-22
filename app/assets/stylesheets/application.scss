@@ -265,9 +265,20 @@ footer {
 
 .show-link {
   text-align:center;
-  margin: 30px 0px;
+  margin: 30px 0px 0px 0px;
   font-weight: 600;
 }
+
+.show-link > a {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: $small) {
+  .show-link {
+    margin: 50px 0px;
+  }
+}
+
 
 /*
  * Tagged Page Style 
