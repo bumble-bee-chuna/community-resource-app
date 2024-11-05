@@ -20,6 +20,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -28,7 +29,9 @@
   <header style="background:rgb(46, 56, 162); color: white; font-weight: 700;padding: 30px;">
     <nav style="display: flex;">
       <div class="nav-left" style="flex:6;font-size: 18px;"><a href="/" class="logo" style="color:white;">Mini Case Management Tool</a></div>
-      <div class="nav-right" style="flex:1;text-align: right;"><span id="open-menu">|||</span></div>
+      <div class="nav-right" style="flex:1;text-align: right;">
+        <i id="open-menu" class="fa fa-bars" aria-hidden="true"></i>
+      </div>
     </nav>
     <div id="nav-menu" class="nav-close">
       <span id="close-nav-menu">X</span>
@@ -44,11 +47,13 @@
       $(function() {
         $("#open-menu").click(function(){
           $("#nav-menu").removeClass("nav-close");
-        })
+          $("#nav-menu").addClass("fade-in-div");
+        });
 
         $("#close-nav-menu").click(function(){
           $("#nav-menu").addClass("nav-close");
-        })
+          $("#nav-menu").removeClass("fade-in-div");
+        });
       });
     </script>
     <style>
@@ -56,11 +61,21 @@
       .nav-close {
         display: none !important;
       }
+      .fade-in-div { animation: fadeIn .5s; }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
       .navigation {
         list-style-type: none;
         list-style-type: none;
         margin-top: 100px;
         padding: 10px;
+      }
+      #open-menu {
+        font-size: 1.4em;
       }
       #nav-menu {
         text-align: center;
