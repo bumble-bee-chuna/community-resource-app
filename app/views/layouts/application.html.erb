@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   </head>
 
-  <header style="background:rgb(46, 56, 162); color: white; font-weight: 700;padding: 30px;">
+  <header style="background:rgb(46, 56, 162); color: white; font-weight: 700;padding: 30px;position: fixed;width: 100%;">
     <nav style="display: flex;">
       <div class="nav-left" style="flex:6;font-size: 18px;"><a href="/" class="logo" style="color:white;">Mini Case Management Tool</a></div>
       <div class="nav-right" style="flex:1;text-align: right;">
@@ -109,7 +109,7 @@
     </style>
   </header>
   <body>
-    <div class="container text-center">
+    <div class="container text-center" style="padding-top: 100px;">
       <%= yield %>
     </div>
   </body>
