@@ -1,4 +1,71 @@
-<div id="<%= dom_id in_person_interest_resource %>" class="resource-display">
+
+<style>
+  .resource-display__add-container {
+    text-align: right;
+    font-size: 2em;
+    color: #c73333;
+    padding-top: 10px;
+  }
+</style>
+
+<script type="text/javascript">
+
+$(function() { 
+    // Initialize communityActivities array from sessionStorage or as an empty array
+    const communityActivities = JSON.parse(sessionStorage.getItem('communityActivities')) || [];
+    const $resourceButtons = $(".resource-display__add");
+
+    // Function to fetch and add resource data by id
+    function addResourceData(id) {
+        $.getJSON(`/in_person_interest_resources/${id}.json`)
+            .done((data) => {
+                communityActivities.push(data);
+                sessionStorage.setItem('communityActivities', JSON.stringify(communityActivities));
+            })
+            .fail(() => console.error(`Failed to fetch data for resource with id: ${id}`));
+    }
+
+    // Function to remove resource data by id
+    function removeResourceData(id) {
+      const updatedItems = communityActivities.filter(item => item.id !== id);
+      sessionStorage.setItem('communityActivities', JSON.stringify(updatedItems));
+    }
+
+    // Function to update button icon based on whether resource exists
+    function updateButtonIcon($button, exists) {
+        $button.toggleClass("fa-plus-circle", exists);
+        $button.toggleClass("fa-minus-circle");
+    }
+
+    // Event handler for resource-display__add button clicks
+    $resourceButtons.on("click", function() {
+        const id = $(this).data("id");
+        if($(this).hasClass("fa-plus-circle")){
+          addResourceData(id);
+        }
+        else if ($(this).hasClass("fa-minus-circle")) {
+          removeResourceData(id);
+        }
+        
+    });
+
+    // Check if resources already exist and update button icons accordingly
+    $resourceButtons.each(function () {
+        const id = $(this).data("id");
+        const exists = communityActivities.some(activity => activity.id === id);
+        updateButtonIcon($(this), exists);
+    });
+});
+
+
+</script>
+
+
+<div id="<%= dom_id in_person_interest_resource %>" data-id="<%= in_person_interest_resource.id %>" class="resource-display">
+
+  <div class="resource-display__add-container">
+    <i class="resource-display__add fa fa-plus-circle" aria-hidden="true" data-id="<%= in_person_interest_resource.id %>"></i>
+  </div>
 
   <div class="display-field">
     <div class="field-label"><strong>Name:</strong></div>

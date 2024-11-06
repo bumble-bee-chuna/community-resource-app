@@ -22,18 +22,3 @@ document.addEventListener("turbo:load", function () {
 //= require turbolinks
 
 //= require_tree .
-
-$(function() {
-
-  //Open navigation menu
-  $("#open-nav-menu").click(function(){
-    $("#nav-menu").removeClass("nav-closed-state");
-    $("#nav-menu").addClass("fade-in-div");
-  });
-
-  //Close navigation menu
-  $("#close-nav-menu").click(function(){
-    $("#nav-menu").addClass("nav-closed-state");
-    $("#nav-menu").removeClass("fade-in-div");
-  });
-});
