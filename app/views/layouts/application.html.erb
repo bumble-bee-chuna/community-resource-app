@@ -33,32 +33,32 @@
         <i id="open-menu" class="fa fa-bars" aria-hidden="true"></i>
       </div>
     </nav>
-    <div id="nav-menu" class="nav-close">
+    <div id="nav-menu" class="nav-closed-state">
       <span id="close-nav-menu">X</span>
       <ul class="navigation">
-        <li class="nav-link"><a href="#">Home</a></li>
-        <li class="nav-link"><a href="#">Interest-Based Activities</a></li>
-        <li class="nav-link"><a href="#">Substance Recovery Resources</a></li>
-        <li class="nav-link"><a href="#">Online Peer Groups</a></li>
+        <li class="nav-link"><a href="/">Home</a></li>
+        <li class="nav-link"><a href="/in_person_interest_resources">Interest-Based Activities</a></li>
+        <li class="nav-link"><a href="/in_person_recovery_resources">Substance Recovery Resources</a></li>
+        <li class="nav-link"><a href="/online_peer_and_recovery_resources">Online Peer Groups</a></li>
       </ul>
     </div>
 
     <script>
       $(function() {
         $("#open-menu").click(function(){
-          $("#nav-menu").removeClass("nav-close");
+          $("#nav-menu").removeClass("nav-closed-state");
           $("#nav-menu").addClass("fade-in-div");
         });
 
         $("#close-nav-menu").click(function(){
-          $("#nav-menu").addClass("nav-close");
+          $("#nav-menu").addClass("nav-closed-state");
           $("#nav-menu").removeClass("fade-in-div");
         });
       });
     </script>
     <style>
 
-      .nav-close {
+      .nav-closed-state {
         display: none !important;
       }
       .fade-in-div { animation: fadeIn .5s; }
