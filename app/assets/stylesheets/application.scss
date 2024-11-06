@@ -14,11 +14,14 @@
 $small: 999px;
 $medium: 900px;
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 body {
 	font-size: 17px !important;
   line-height: 1.7em;
-  /*background: #bfbfbf;*/
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
 }
@@ -38,11 +41,92 @@ h1 {
 	margin: 20px 0;
 }
 
-@media screen and (max-width: $small) { 
-  body {
-    
-  }
+/*
+ * Container
+ */
+
+container {
+  padding-top: 100px;
 }
+
+/*
+ * Navigation
+ */
+
+header {
+  background:rgb(46, 56, 162);
+  color: white;
+  font-weight: 700;
+  padding: 30px;
+  position: fixed;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+}
+
+.nav__left {
+  flex:6;
+  font-size: 18px;
+}
+
+.nav__right {
+  flex:1;
+  text-align: right;
+}
+
+.nav__menu {
+  text-align: center;
+  position: absolute;
+  padding: 10px;
+  background: rgb(46, 56, 162);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  position: fixed;
+}
+
+.nav__menu--closed-state {
+  display: none;
+}
+
+.nav__menu--fade-in { animation: fadeIn .5s; }
+
+.nav__link-list {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.nav__link {
+  color: white;
+  font-size: 1.8em;
+  line-height: 1.4em;
+  padding: 20px 0;
+}
+
+.nav__link > a {
+  color: white;
+}
+
+.nav__open-menu-button {
+  font-size: 1.4em;
+}
+
+.nav__close-menu-button {
+  display: block;
+  text-align: right;
+  font-size: 2em;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+
+/*
+ * Footer
+ */
 
 footer {
   text-align: center;

@@ -26,57 +26,84 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   </head>
 
-  <header style="background:rgb(46, 56, 162); color: white; font-weight: 700;padding: 30px;position: fixed;width: 100%;">
-    <nav style="display: flex;">
-      <div class="nav-left" style="flex:6;font-size: 18px;"><a href="/" class="logo" style="color:white;">Mini Case Management Tool</a></div>
-      <div class="nav-right" style="flex:1;text-align: right;">
-        <i id="open-menu" class="fa fa-bars" aria-hidden="true"></i>
+  <header>
+    <nav>
+
+      <!-- Navigation blue bar -->
+      <div class="nav__left">
+        <a class="logo--white" href="/">Mini Case Management Tool</a>
       </div>
+      <div class="nav__right">
+        <i id="nav__open-menu-button" class="nav__open-menu-button fa fa-bars" aria-hidden="true"></i>
+      </div>
+
+      <!-- Navigation menu -->
+      <div id="nav__menu" class="nav__menu nav__menu--closed-state">
+        <span id="nav__close-menu-button" class="nav__close-menu-button">X</span>
+        <ul class="nav__link-list">
+          <li class="nav__link"><a href="/">Home</a></li>
+          <li class="nav__link"><a href="/in_person_interest_resources">Interest-Based Activities</a></li>
+          <li class="nav__link"><a href="/in_person_recovery_resources">Substance Recovery Resources</a></li>
+          <li class="nav__link"><a href="/online_peer_and_recovery_resources">Online Peer Groups</a></li>
+        </ul>
+      </div>
+
     </nav>
-    <div id="nav-menu" class="nav-closed-state">
-      <span id="close-nav-menu">X</span>
-      <ul class="navigation">
-        <li class="nav-link"><a href="/">Home</a></li>
-        <li class="nav-link"><a href="/in_person_interest_resources">Interest-Based Activities</a></li>
-        <li class="nav-link"><a href="/in_person_recovery_resources">Substance Recovery Resources</a></li>
-        <li class="nav-link"><a href="/online_peer_and_recovery_resources">Online Peer Groups</a></li>
-      </ul>
-    </div>
+
+    
 
     <script>
-      $(function() {
-        $("#open-menu").click(function(){
-          $("#nav-menu").removeClass("nav-closed-state");
-          $("#nav-menu").addClass("fade-in-div");
-        });
+    $(function() {
 
-        $("#close-nav-menu").click(function(){
-          $("#nav-menu").addClass("nav-closed-state");
-          $("#nav-menu").removeClass("fade-in-div");
-        });
+      const navMenu = $("#nav__menu");
+      const navOpenBtn = $("#nav__open-menu-button");
+      const navCloseBtn = $("#nav__close-menu-button");
+
+      //Open navigation menu
+      navOpenBtn.click(function(){
+        navMenu.removeClass("nav__menu--closed-state");
+        navMenu.addClass("nav__menu--fade-in");
       });
-    </script>
-    <style>
 
-      .nav-closed-state {
-        display: none !important;
-      }
-      .fade-in-div { animation: fadeIn .5s; }
+      //Close navigation menu
+      navCloseBtn.click(function(){
+        navMenu.addClass("nav__menu--closed-state");
+        navMenu.removeClass("nav__menu--fade-in");
+      });
+    });
+    </script>
+
+    <style>
 
       @keyframes fadeIn {
         0% { opacity: 0; }
         100% { opacity: 1; }
       }
 
-      .navigation {
-        list-style-type: none;
-        list-style-type: none;
-        padding: 10px;
+      header {
+        background:rgb(46, 56, 162);
+        color: white;
+        font-weight: 700;
+        padding: 30px;
+        position: fixed;
+        width: 100%;
       }
-      #open-menu {
-        font-size: 1.4em;
+
+      nav {
+        display: flex;
       }
-      #nav-menu {
+
+      .nav__left {
+        flex:6;
+        font-size: 18px;
+      }
+
+      .nav__right {
+        flex:1;
+        text-align: right;
+      }
+
+      .nav__menu {
         text-align: center;
         position: absolute;
         padding: 10px;
@@ -88,28 +115,50 @@
         height: 100vh;
         position: fixed;
       }
-      .nav-link {
+
+      .nav__menu--closed-state {
+        display: none;
+      }
+
+      .nav__menu--fade-in { animation: fadeIn .5s; }
+
+      .nav__link-list {
+        list-style-type: none;
+        padding: 10px;
+      }
+
+      .nav__link {
         color: white;
         font-size: 1.8em;
         line-height: 1.4em;
         padding: 20px 0;
       }
 
-      .nav-link > a {
+      .nav__link > a {
         color: white;
       }
 
-      #close-nav-menu {
+      .nav__open-menu-button {
+        font-size: 1.4em;
+      }
+
+      .nav__close-menu-button {
         display: block;
         text-align: right;
         font-size: 2em;
         margin-right: 10px;
         margin-top: 10px;
       }
+
+      .logo--white {
+        color: white;
+      }
+
+      
     </style>
   </header>
   <body>
-    <div class="container text-center" style="padding-top: 100px;">
+    <div class="container text-center">
       <%= yield %>
     </div>
   </body>
