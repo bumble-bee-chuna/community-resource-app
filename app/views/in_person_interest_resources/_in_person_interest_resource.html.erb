@@ -10,52 +10,52 @@
 
 <script type="text/javascript">
 
-$(function() { 
-    // Initialize communityActivities array from sessionStorage or as an empty array
-    const communityActivities = JSON.parse(sessionStorage.getItem('communityActivities')) || [];
-    const $resourceButtons = $(".resource-display__add");
+// $(function() { 
+//     // Initialize communityActivities array from sessionStorage or as an empty array
+//     const communityActivities = JSON.parse(sessionStorage.getItem('communityActivities')) || [];
+//     const $resourceButtons = $(".resource-display__add");
 
-    // Function to fetch and add resource data by id
-    function addResourceData(id) {
-        $.getJSON(`/in_person_interest_resources/${id}.json`)
-            .done((data) => {
-                communityActivities.push(data);
-                sessionStorage.setItem('communityActivities', JSON.stringify(communityActivities));
-            })
-            .fail(() => console.error(`Failed to fetch data for resource with id: ${id}`));
-    }
+//     // Function to fetch and add resource data by id
+//     function addResourceData(id) {
+//         $.getJSON(`/in_person_interest_resources/${id}.json`)
+//             .done((data) => {
+//                 communityActivities.push(data);
+//                 sessionStorage.setItem('communityActivities', JSON.stringify(communityActivities));
+//             })
+//             .fail(() => console.error(`Failed to fetch data for resource with id: ${id}`));
+//     }
 
-    // Function to remove resource data by id
-    function removeResourceData(id) {
-      const updatedItems = communityActivities.filter(item => item.id !== id);
-      sessionStorage.setItem('communityActivities', JSON.stringify(updatedItems));
-    }
+//     // Function to remove resource data by id
+//     function removeResourceData(id) {
+//       const updatedItems = communityActivities.filter(item => item.id !== id);
+//       sessionStorage.setItem('communityActivities', JSON.stringify(updatedItems));
+//     }
 
-    // Function to update button icon based on whether resource exists
-    function updateButtonIcon($button, exists) {
-        $button.toggleClass("fa-plus-circle", exists);
-        $button.toggleClass("fa-minus-circle");
-    }
+//     // Function to update button icon based on whether resource exists
+//     function updateButtonIcon($button, exists) {
+//         $button.toggleClass("fa-plus-circle", exists);
+//         $button.toggleClass("fa-minus-circle");
+//     }
 
-    // Event handler for resource-display__add button clicks
-    $resourceButtons.on("click", function() {
-        const id = $(this).data("id");
-        if($(this).hasClass("fa-plus-circle")){
-          addResourceData(id);
-        }
-        else if ($(this).hasClass("fa-minus-circle")) {
-          removeResourceData(id);
-        }
+//     // Event handler for resource-display__add button clicks
+//     $resourceButtons.on("click", function() {
+//         const id = $(this).data("id");
+//         if($(this).hasClass("fa-plus-circle")){
+//           addResourceData(id);
+//         }
+//         else if ($(this).hasClass("fa-minus-circle")) {
+//           removeResourceData(id);
+//         }
         
-    });
+//     });
 
-    // Check if resources already exist and update button icons accordingly
-    $resourceButtons.each(function () {
-        const id = $(this).data("id");
-        const exists = communityActivities.some(activity => activity.id === id);
-        updateButtonIcon($(this), exists);
-    });
-});
+//     // Check if resources already exist and update button icons accordingly
+//     $resourceButtons.each(function () {
+//         const id = $(this).data("id");
+//         const exists = communityActivities.some(activity => activity.id === id);
+//         updateButtonIcon($(this), exists);
+//     });
+// });
 
 
 </script>
@@ -117,89 +117,19 @@ $(function() {
           <th>Opens at:</th>
           <th>Closes at:</th>
         </tr>
-        <tr>
-          <td><strong>Monday</strong></td>
-          <% if in_person_interest_resource.monday_opening_hours != nil and in_person_interest_resource.monday_closing_hours != nil %>
-            <td><%= in_person_interest_resource.monday_opening_hours.strftime('%I:%M %p') %></td>
-            <td><%= in_person_interest_resource.monday_closing_hours.strftime('%I:%M %p') %></td>
-          <% else %>
-            <td>Closed</td>
-            <td>Closed</td>
-          <% end %>
-        </tr>
 
-
-        <tr>
-          <td><strong>Tuesday</strong></td>
-          <% if in_person_interest_resource.tuesday_opening_hours != nil and in_person_interest_resource.tuesday_closing_hours != nil %>
-            <td><%= in_person_interest_resource.tuesday_opening_hours.strftime('%I:%M %p') %></td>
-            <td><%= in_person_interest_resource.tuesday_closing_hours.strftime('%I:%M %p') %></td>
-          <% else %>
-            <td>Closed</td>
-            <td>Closed</td>
-          <% end %>
-        </tr>
-
-
-        <tr>
-          <td><strong>Wednesday</strong></td>
-          <% if in_person_interest_resource.wednesday_opening_hours != nil and in_person_interest_resource.wednesday_closing_hours != nil %>
-            <td><%= in_person_interest_resource.wednesday_opening_hours.strftime('%I:%M %p') %></td>
-            <td><%= in_person_interest_resource.wednesday_closing_hours.strftime('%I:%M %p') %></td>
-          <% else %>
-            <td>Closed</td>
-            <td>Closed</td>
-          <% end %>
-        </tr>
-
-
-        <tr>
-          <td><strong>Thursday</strong></td>
-          <% if in_person_interest_resource.thursday_opening_hours != nil and in_person_interest_resource.thursday_closing_hours != nil %>
-            <td><%= in_person_interest_resource.thursday_opening_hours.strftime('%I:%M %p') %></td>
-            <td><%= in_person_interest_resource.thursday_closing_hours.strftime('%I:%M %p') %></td>
-          <% else %>
-            <td>Closed</td>
-            <td>Closed</td>
-          <% end %>
-        </tr>
-
-
-        <tr>
-          <td><strong>Friday</strong></td>
-          <% if in_person_interest_resource.friday_opening_hours != nil and in_person_interest_resource.friday_closing_hours != nil %>
-            <td><%= in_person_interest_resource.friday_opening_hours.strftime('%I:%M %p') %></td>
-            <td><%= in_person_interest_resource.friday_closing_hours.strftime('%I:%M %p') %></td>
-          <% else %>
-            <td>Closed</td>
-            <td>Closed</td>
-          <% end %>
-        </tr>
-
-        
-        <tr>
-          <td><strong>Saturday</strong></td>
-          <% if in_person_interest_resource.saturday_opening_hours != nil and in_person_interest_resource.saturday_closing_hours != nil %>
-            <td><%= in_person_interest_resource.saturday_opening_hours.strftime('%I:%M %p') %></td>
-            <td><%= in_person_interest_resource.saturday_closing_hours.strftime('%I:%M %p') %></td>
-          <% else %>
-            <td>Closed</td>
-            <td>Closed</td>
-          <% end %>
-        </tr>
-        
-
-        <tr>
-          <td><strong>Sunday</strong></td>
-          <% if in_person_interest_resource.sunday_opening_hours != nil and in_person_interest_resource.sunday_closing_hours != nil %>
-            <td><%= in_person_interest_resource.sunday_opening_hours.strftime('%I:%M %p') %></td>
-            <td><%= in_person_interest_resource.sunday_closing_hours.strftime('%I:%M %p') %></td>
-          <% else %>
-            <td>Closed</td>
-            <td>Closed</td>
-          <% end %>
-        </tr>
-        
+        <% ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"].each do |day| %>
+          <tr>
+            <td><strong><%= day.capitalize %></strong></td>
+            <% if in_person_interest_resource["#{day}_opening_hours"].present? && in_person_interest_resource["#{day}_closing_hours"].present? %>
+              <td><%= in_person_interest_resource["#{day}_opening_hours"].strftime('%I:%M %p') %></td>
+              <td><%= in_person_interest_resource["#{day}_closing_hours"].strftime('%I:%M %p') %></td>
+            <% else %>
+              <td>Closed</td>
+              <td>Closed</td>
+            <% end %>
+          </tr>
+        <% end %>
       </table>
     </div>
   </div>
