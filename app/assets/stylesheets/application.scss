@@ -138,6 +138,9 @@ nav {
 .nav__link--button > a {
   color: #2e38a2;
 }
+.nav__link--button > a:hover {
+  text-decoration: none;
+}
 
 .nav__open-menu-button {
   font-size: 1.4em;
