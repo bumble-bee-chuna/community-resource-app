@@ -89,6 +89,11 @@ $(function() {
   });
 
 
+
+  if(sessionStorage.getItem("cartCount") == 0){
+    sessionStorage.setItem("cartCount", "");
+  }
+
   if(sessionStorage.getItem("cartCount")){
     var cartCount = Number(sessionStorage.getItem("cartCount"));
     $(".resource-count").text(cartCount);
@@ -109,6 +114,7 @@ $(function() {
       cartCount = cartCount + 1;
       sessionStorage.setItem("cartCount", cartCount);
       $(".resource-count").text(cartCount);
+      $("#nav__cart-count").show();
     }
     
 
