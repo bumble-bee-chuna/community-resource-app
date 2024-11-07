@@ -37,6 +37,10 @@ h1 {
   margin: 40px 0px;
 }
 
+h1:nth-of-type(1) {
+  margin: 120px auto 0px auto !important;
+}
+
 .page-heading {
 	margin: 20px 0;
 }
@@ -315,7 +319,7 @@ footer {
   @media screen and (max-width: $small) {
 
     .page-heading-container {
-      margin: 85px auto !important;
+      margin: 85px auto 0px auto !important;
     }
 
     .page-heading__bold {
