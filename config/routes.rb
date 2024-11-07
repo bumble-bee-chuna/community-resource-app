@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  get '/print_resource_sheet', to: "home#print"
   get '/tagged', to: "in_person_recovery_resources#tagged"
   get '/wellbeing_tagged', to: "in_person_wellbeing_resources#tagged"
   get '/interest_tagged', to: "in_person_interest_resources#tagged"
