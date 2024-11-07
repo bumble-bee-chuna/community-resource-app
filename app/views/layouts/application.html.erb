@@ -35,6 +35,9 @@
       </div>
       <div class="nav__right">
         <i id="nav__open-menu-button" class="nav__open-menu-button fa fa-bars" aria-hidden="true"></i>
+        <div id="nav__cart-count" style="display: none;">
+         <span class="resource-count">0</span>
+        </div>
       </div>
 
       <!-- Navigation menu -->
@@ -46,7 +49,8 @@
           <li class="nav__link"><a href="/in_person_recovery_resources">Substance Recovery Resources</a></li>
           <li class="nav__link"><a href="/online_peer_and_recovery_resources">Online Peer Groups</a></li>
           <li class="nav__link nav__link--button">
-            <a href="#">Print Resource Sheet <i class="fa fa-print" aria-hidden="true"></i></a>
+            <a href="#">Print Resource Sheet <i class="fa fa-print" aria-hidden="true"></i></a><br/>
+            <sub>Resources Items Added (<span class="resource-count">0</span>)</sub>
           </li>
         </ul>
       </div>
@@ -85,6 +89,34 @@ $(function() {
   });
 
 
+  if(sessionStorage.getItem("cartCount")){
+    var cartCount = Number(sessionStorage.getItem("cartCount"));
+    $(".resource-count").text(cartCount);
+    $("#nav__cart-count").show();
+  }
+
+
+  
+
+  $(".resource-display__add-container > div ").click(function(){
+    var cartCount = Number(sessionStorage.getItem("cartCount"));
+    if($(this).hasClass("opened")){
+      cartCount = cartCount - 1;
+      sessionStorage.setItem("cartCount", cartCount);
+      $(".resource-count").text(cartCount);
+    }
+    else {
+      cartCount = cartCount + 1;
+      sessionStorage.setItem("cartCount", cartCount);
+      $(".resource-count").text(cartCount);
+    }
+    
+
+  })
+
+
+
+
   $('.circle-plus').on('click', function(){
     $(this).toggleClass('opened');
   })
@@ -95,6 +127,32 @@ $(function() {
 });
 </script>
 <style>
+
+#nav__cart-count {
+  background: red;
+  width: 20px;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 12px;
+  height: 20px;
+  position: absolute;
+  right: 16px;
+  top: 44px;
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+}
+
+#nav__cart-count > span {
+  display: block;
+  margin-top: -4px;
+}
+
+.nav__open-menu-button {
+  display: block;
+}
+
 .resource-display__add-container {
   display: flex;
   justify-content: right;
